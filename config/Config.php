@@ -8,5 +8,9 @@
 
 class Config
 {
-
+    public $database;
+    public function __construct()
+    {
+        $this->database = Db_connect::getConnecion();
+    }
 }
