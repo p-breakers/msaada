@@ -43,4 +43,20 @@ class Compte
     {
         $this->num_compte = $num_compte;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getSolde()
+    {
+        return $this->solde;
+    }
+
+    /**
+     * @param mixed $solde
+     */
+    public function setSolde($solde)
+    {
+        $this->solde = $solde;
+    }
 }
