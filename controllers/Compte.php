@@ -18,10 +18,13 @@ class Compte
      * @param int $num_client
      * @param float $solde
      */
-    public function __construct(int $num_client, float $solde)
+    public function __construct(int $num_client, float $solde = null)
     {
         $this->setNumClient($num_client);
-        $this->setSolde($solde);
+        if ($solde == null)
+            $this->setSolde(0);
+        else
+            $this->setSolde($solde);
     }
 
     /**
@@ -71,6 +74,5 @@ class Compte
     {
         $this->solde = $solde;
     }
-
 
 }
