@@ -27,4 +27,20 @@ class Compte
     {
         $this->num_client = $num_client;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getNumCompte()
+    {
+        return $this->num_compte;
+    }
+
+    /**
+     * @param mixed $num_compte
+     */
+    public function setNumCompte($num_compte)
+    {
+        $this->num_compte = $num_compte;
+    }
 }
