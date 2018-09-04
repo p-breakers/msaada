@@ -7,4 +7,4 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond $1 !^(index\.php|robots\.txt|favicon\.ico)
 RewriteRule ^(.*)$ index\.php/$1 [L,QSA]
-ErrorDocument 403 /403.html
+ErrorDocument 403 http://localhost/banque/403.html
