@@ -1,7 +1,7 @@
 <?php
 class Db_connect
 {
-    public function getConnecion()
+    public static function getConnecion()
     {
         $HOST = "localhost";
         $USERNAME = "root";
