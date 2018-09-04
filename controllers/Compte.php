@@ -8,5 +8,7 @@
 
 class Compte
 {
-
+    public $num_client;
+    public $num_compte;
+    public $solde;
 }
