@@ -12,6 +12,18 @@ class Compte
     public $num_compte;
     public $solde;
 
+
+    /**
+     * Compte constructor.
+     * @param int $num_client
+     * @param float $solde
+     */
+    public function __construct(int $num_client, float $solde)
+    {
+        $this->setNumClient($num_client);
+        $this->setSolde($solde);
+    }
+
     /**
      * @return mixed
      */
@@ -59,4 +71,6 @@ class Compte
     {
         $this->solde = $solde;
     }
+
+
 }
