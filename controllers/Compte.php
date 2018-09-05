@@ -11,14 +11,17 @@ class Compte
     public $num_client;
     public $num_compte;
     public $solde;
+    public $id;
 
 
     /**
      * Compte constructor.
+     * @param string $num_compte
      * @param int $num_client
-     * @param float $solde
+     * @param float|null $solde
+     * @param int $id
      */
-    public function __construct(int $num_client, float $solde = null)
+    public function __construct(string $num_compte, int $num_client, float $solde = null, int $id = 0)
     {
         $this->setNumClient($num_client);
         if ($solde == null)
