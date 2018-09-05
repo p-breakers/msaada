@@ -63,4 +63,20 @@ class Admin
         $this->phone = $phone;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getMotdepasse()
+    {
+        return $this->motdepasse;
+    }
+
+    /**
+     * @param mixed $motdepasse
+     */
+    public function setMotdepasse($motdepasse): void
+    {
+        $this->motdepasse = $motdepasse;
+    }
+
 }
