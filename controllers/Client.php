@@ -11,10 +11,30 @@ class Client
     public $bday;
     private static $motdepasse;
 
-    public function __construct(int $num_client, string $nom_complet, string $adresse, string $bday, $email, $genre, $motdepasse, $nationalite, $phone)
+    /**
+     * Client constructor.
+     * @param $num_client
+     * @param $nom_complet
+     * @param $adresse
+     * @param $nationalite
+     * @param $genre
+     * @param $phone
+     * @param $email
+     * @param $bday
+     */
+    public function __construct($num_client, $nom_complet, $adresse, $nationalite, $genre, $phone, $email, $bday, $motdepasse)
     {
-
+        $this->num_client = $num_client;
+        $this->nom_complet = $nom_complet;
+        $this->adresse = $adresse;
+        $this->nationalite = $nationalite;
+        $this->genre = $genre;
+        $this->phone = $phone;
+        $this->email = $email;
+        $this->bday = $bday;
+        self::setMotdepasse($motdepasse);
     }
+
 
     /**
      * @return mixed
