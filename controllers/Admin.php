@@ -14,7 +14,6 @@ class Admin
     private $motdepasse;
     public $mail;
     public $type;
-    public $compte;
     /**
      * Admin constructor.
      * @param $id
@@ -129,22 +128,6 @@ class Admin
     public function setType($type): void
     {
         $this->type = $type;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getCompte()
-    {
-        return $this->compte;
-    }
-
-    /**
-     * @param Compte $compte
-     */
-    public function setCompte(Compte $compte): void
-    {
-        $this->compte = $compte;
     }
 
 }
