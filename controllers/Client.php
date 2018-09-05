@@ -14,6 +14,22 @@ class Client
     /**
      * @return mixed
      */
+    public static function getMotdepasse()
+    {
+        return self::$motdepasse;
+    }
+
+    /**
+     * @param mixed $motdepasse
+     */
+    public static function setMotdepasse($motdepasse): void
+    {
+        self::$motdepasse = $motdepasse;
+    }
+
+    /**
+     * @return mixed
+     */
     public function getNumClient()
     {
         return $this->num_client;
