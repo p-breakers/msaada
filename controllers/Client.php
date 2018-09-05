@@ -11,6 +11,11 @@ class Client
     public $bday;
     private static $motdepasse;
 
+    public function __construct(int $num_client, string $nom_complet, string $adresse, string $bday, $email, $genre, $motdepasse, $nationalite, $phone)
+    {
+
+    }
+
     /**
      * @return mixed
      */
@@ -152,6 +157,6 @@ class Client
      */
     public function setBday($bday): void
     {
-        $this->bday = $bday;
+        $this->bday = date("d-m-Y",$bday);
     }
 }
