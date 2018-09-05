@@ -122,4 +122,20 @@ class Client
     {
         $this->email = $email;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getBday()
+    {
+        return $this->bday;
+    }
+
+    /**
+     * @param mixed $bday
+     */
+    public function setBday($bday): void
+    {
+        $this->bday = $bday;
+    }
 }
