@@ -79,4 +79,20 @@ class Admin
         $this->motdepasse = $motdepasse;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getMail()
+    {
+        return $this->mail;
+    }
+
+    /**
+     * @param mixed $mail
+     */
+    public function setMail($mail): void
+    {
+        $this->mail = $mail;
+    }
+
 }
