@@ -19,10 +19,10 @@ class Model
     }
 
     /**
-     * @param mixed $db
+     *
      */
-    public static function setDb($db): void
+    public static function setDb(): void
     {
-        self::$db = $db;
+        self::$db = Db_connect::getConnecion();
     }
 }
