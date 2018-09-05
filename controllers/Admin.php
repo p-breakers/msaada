@@ -16,6 +16,26 @@ class Admin
     public $type;
 
     /**
+     * Admin constructor.
+     * @param $id
+     * @param $nom_complet
+     * @param $phone
+     * @param $motdepasse
+     * @param $mail
+     * @param $type
+     */
+    public function __construct($id, $nom_complet, $phone, $motdepasse, $mail, $type)
+    {
+        $this->id = $id;
+        $this->nom_complet = $nom_complet;
+        $this->phone = $phone;
+        $this->motdepasse = $motdepasse;
+        $this->mail = $mail;
+        $this->type = $type;
+    }
+
+
+    /**
      * @return mixed
      */
     public function getId()
