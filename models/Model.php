@@ -8,5 +8,5 @@
 
 class Model
 {
-
+    private static $db;
 }
