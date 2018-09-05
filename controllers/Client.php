@@ -10,6 +10,7 @@ class Client
     public $email;
     public $bday;
     private static $motdepasse;
+    public $compte;
 
     /**
      * Client constructor.
@@ -178,5 +179,21 @@ class Client
     public function setBday($bday): void
     {
         $this->bday = date("d-m-Y",$bday);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCompte()
+    {
+        return $this->compte;
+    }
+
+    /**
+     * @param Compte $compte
+     */
+    public function setCompte(Compte $compte): void
+    {
+        $this->compte = $compte;
     }
 }
