@@ -21,15 +21,12 @@ class Compte
      * @param float|null $solde
      * @param int $id
      */
-    public function __construct(string $num_compte, int $num_client, float $solde = null, int $id = 0)
+    public function __construct(string $num_compte, int $num_client, float $solde = 0, int $id = 0)
     {
         $this->setNumClient($num_client);
         $this->setNumCompte($num_compte);
         $this->setId($id);
-        if ($solde == null)
-            $this->setSolde(0);
-        else
-            $this->setSolde($solde);
+        $this->setSolde($solde);
     }
 
     /**
