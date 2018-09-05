@@ -8,5 +8,11 @@
 
 class Admin
 {
+    public $id;
+    public $nom_complet;
+    public $phone;
+    private $motdepasse;
+    public $mail;
+    public $type;
 
 }
