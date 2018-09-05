@@ -58,4 +58,20 @@ class Client
     {
         $this->adresse = $adresse;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getNationalite()
+    {
+        return $this->nationalite;
+    }
+
+    /**
+     * @param mixed $nationalite
+     */
+    public function setNationalite($nationalite): void
+    {
+        $this->nationalite = $nationalite;
+    }
 }
