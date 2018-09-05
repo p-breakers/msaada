@@ -140,9 +140,9 @@ class Admin
     }
 
     /**
-     * @param mixed $compte
+     * @param Compte $compte
      */
-    public function setCompte($compte): void
+    public function setCompte(Compte $compte): void
     {
         $this->compte = $compte;
     }
