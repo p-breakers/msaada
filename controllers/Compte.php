@@ -24,6 +24,8 @@ class Compte
     public function __construct(string $num_compte, int $num_client, float $solde = null, int $id = 0)
     {
         $this->setNumClient($num_client);
+        $this->setNumCompte($num_compte);
+        $this->setId($id);
         if ($solde == null)
             $this->setSolde(0);
         else
