@@ -74,4 +74,20 @@ class Client
     {
         $this->nationalite = $nationalite;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getGenre()
+    {
+        return $this->genre;
+    }
+
+    /**
+     * @param mixed $genre
+     */
+    public function setGenre($genre): void
+    {
+        $this->genre = $genre;
+    }
 }
