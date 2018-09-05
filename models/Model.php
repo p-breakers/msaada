@@ -9,4 +9,20 @@
 class Model
 {
     private static $db;
+
+    /**
+     * @return mixed
+     */
+    public static function getDb()
+    {
+        return self::$db;
+    }
+
+    /**
+     * @param mixed $db
+     */
+    public static function setDb($db): void
+    {
+        self::$db = $db;
+    }
 }
