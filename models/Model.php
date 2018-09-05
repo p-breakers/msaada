@@ -11,6 +11,15 @@ class Model
     private static $db;
 
     /**
+     * Model constructor.
+     */
+    public function __construct()
+    {
+        self::setDb();
+    }
+
+
+    /**
      * @return mixed
      */
     public static function getDb()
