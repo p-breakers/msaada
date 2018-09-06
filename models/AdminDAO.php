@@ -7,7 +7,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * Time: 18:16 PM
  */
 
-class AdminDAO
+class AdminDAO extends Model
 {
-
+    public function __construct()
+    {
+        parent::__construct();
+    }
 }
