@@ -1,6 +1,9 @@
 <?php
 class Db_connect
 {
+    /**
+     * @return PDO
+     */
     public static function getConnecion()
     {
         $HOST = "localhost";
@@ -8,11 +11,11 @@ class Db_connect
         $PASSWORD = "";
         $DBNAME = "banque";
         $DSN = "mysql:host=$HOST;dbname=$DBNAME;charset=utf8";
-        $opt = array(
+        $opt = [
             PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
             PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'
-            );
+        ];
         try{
             $pdo = new PDO($DSN,$USERNAME,$PASSWORD,$opt);
         }catch(PDOException $e){
