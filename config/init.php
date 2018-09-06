@@ -13,6 +13,7 @@ $Config["APP_NAME"] = "Banque";
 $Config["AUTHOR"] = "";
 $Config["MAIL"] = "";
 $Config["PHONE"] = "";
+$Config["ACCOUNT_TYPE"] = array("ANALYSTE", "BANQUIER", "CLIENT");
 $Config["DB"] = array();
 $Config["DB"]["HOST"] = "localhost";
 $Config["DB"]["USERNAME"] = "root";
