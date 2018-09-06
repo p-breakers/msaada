@@ -9,5 +9,15 @@
 class ClientDAO extends Model
 {
     public $num_client, $nom_complet, $adresse, $nationalite, $genre, $phone, $email, $bday;
-    private $motdepasse;
+    private $motdepasse, $q;
+
+
+    public function getClient($num_client)
+    {
+        $this->q = $this->db->prepare("SELECT * FROM clients WHERE num_client = :num_client");
+        $this->q->execute([
+            "num_client" => $num_client
+        ]);
+        return new Client($this->q->num_client, $this->q->nom_complet, $this->q->adresse, $this->q->nationalite, $this->q->genre, $this->q->phone, $this->q->email, $this->q->bday, $this->q->motdepasse);
+    }
 }
