@@ -9,30 +9,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Model
 {
-    private static $db;
+    public $db;
+
+    /**
+     * @return mixed
+     */
+    public function getDb()
+    {
+        return $this->db;
+    }
+
+    /**
+     * @param mixed $db
+     */
+    public function setDb(): void
+    {
+        $this->db = Db_connect::getConnecion();
+    }
 
     /**
      * Model constructor.
      */
     public function __construct()
     {
-        self::setDb();
-    }
 
-
-    /**
-     * @return mixed
-     */
-    public static function getDb()
-    {
-        return self::$db;
-    }
-
-    /**
-     *
-     */
-    public static function setDb(): void
-    {
-        self::$db = Db_connect::getConnecion();
     }
 }
