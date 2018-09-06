@@ -16,19 +16,26 @@ class AdminDAO extends Model
 
     public function connexion(string $email, string $motdepasse)
     {
-        $this->q = $this->db->prepare("SELECT * FROM admin WHERE (mail = :email OR phone = :phone OR nom_complet = :nom_complet) 
+        try{
+            $this->q = $this->db->prepare("SELECT * FROM admin WHERE (mail = :email OR phone = :phone OR nom_complet = :nom_complet) 
             AND motdepasse = :motdepasse");
-        $this->q->execute([
-            "email" => $email,
-            "phone" => $email,
-            "nom_complet" => $email,
-            "motdepasse" => $motdepasse
-        ]);
-        if ($this->q->type == "banquier")
-            return new Banquier($this->q->id, $this->q->nom_complet, $this->q->phone, $this->q->motdepasse, $this->q->mail);
-        elseif ($this->q->type == "analyste")
-            return new Analyste($this->q->id, $this->q->nom_complet, $this->q->phone, $this->q->motdepasse, $this->q->mail);
-        else
-            return "error";
+            $this->q->execute([
+                "email" => $email,
+                "phone" => $email,
+                "nom_complet" => $email,
+                "motdepasse" => $motdepasse
+            ]);
+            $admin = "";
+            if ($this->q->type == "banquier")
+                $admin = new Banquier($this->q->id, $this->q->nom_complet, $this->q->phone, $this->q->motdepasse, $this->q->mail);
+            elseif ($this->q->type == "analyste")
+                $admin = new Analyste($this->q->id, $this->q->nom_complet, $this->q->phone, $this->q->motdepasse, $this->q->mail);
+        }catch (PDOException $e){
+            $admin = $e->__toString();
+        }finally{
+            return $admin;
+        }
+
+
     }
 }
