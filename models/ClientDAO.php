@@ -12,6 +12,10 @@ class ClientDAO extends Model
     private $motdepasse, $q;
 
 
+    /**
+     * @param $num_client
+     * @return Client
+     */
     public function getClient($num_client)
     {
         $this->q = $this->db->prepare("SELECT * FROM clients WHERE num_client = :num_client");
@@ -19,5 +23,9 @@ class ClientDAO extends Model
             "num_client" => $num_client
         ]);
         return new Client($this->q->num_client, $this->q->nom_complet, $this->q->adresse, $this->q->nationalite, $this->q->genre, $this->q->phone, $this->q->email, $this->q->bday, $this->q->motdepasse);
+    }
+
+    public function addClient(){
+
     }
 }
