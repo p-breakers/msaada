@@ -131,11 +131,20 @@ class Admin
         $this->type = $type;
     }
 
+    /**
+     * @param $password
+     * @return bool|string
+     */
     public function password_hash($password)
     {
         return password_hash($password, PASSWORD_ARGON2I,["cost" => 18]);
     }
 
+    /**
+     * @param $password
+     * @param $encrypt
+     * @return bool
+     */
     public function password_verify($password, $encrypt)
     {
         return password_verify($password, $encrypt);
