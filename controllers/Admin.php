@@ -135,4 +135,9 @@ class Admin
     {
         return password_hash($password, PASSWORD_ARGON2I,["cost" => 18]);
     }
+
+    public function password_verify($password, $encrypt)
+    {
+        return password_verify($password, $encrypt);
+    }
 }
