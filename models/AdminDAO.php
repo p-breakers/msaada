@@ -28,7 +28,8 @@ class AdminDAO extends Model
                 $admin = new Banquier($this->q->id, $this->q->nom_complet, $this->q->phone, $this->q->motdepasse, $this->q->mail);
             elseif ($this->q->type == "analyste")
                 $admin = new Analyste($this->q->id, $this->q->nom_complet, $this->q->phone, $this->q->motdepasse, $this->q->mail);
-            //TODO: Password verify
+            if ($admin->password_verify($motdepasse, $admin->getMotdepasse()) !== true)
+                $admin = false;
         }catch (PDOException $e){
             $admin = $e->__toString();
         }finally{
