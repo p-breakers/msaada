@@ -14,6 +14,11 @@ class AdminDAO extends Model
         parent::__construct();
     }
 
+    /**
+     * @param string $email
+     * @param string $motdepasse
+     * @return Analyste|Banquier|bool|string
+     */
     public function connexion(string $email, string $motdepasse)
     {
         try{
