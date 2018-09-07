@@ -17,25 +17,22 @@ class AdminDAO extends Model
     public function connexion(string $email, string $motdepasse)
     {
         try{
-            $this->q = $this->db->prepare("SELECT * FROM admin WHERE (mail = :email OR phone = :phone OR nom_complet = :nom_complet) 
-            AND motdepasse = :motdepasse");
+            $this->q = $this->db->prepare("SELECT * FROM admin WHERE mail = :email OR phone = :phone OR nom_complet = :nom_complet");
             $this->q->execute([
                 "email" => $email,
                 "phone" => $email,
-                "nom_complet" => $email,
-                "motdepasse" => $motdepasse
+                "nom_complet" => $email
             ]);
             $admin = "";
             if ($this->q->type == "banquier")
                 $admin = new Banquier($this->q->id, $this->q->nom_complet, $this->q->phone, $this->q->motdepasse, $this->q->mail);
             elseif ($this->q->type == "analyste")
                 $admin = new Analyste($this->q->id, $this->q->nom_complet, $this->q->phone, $this->q->motdepasse, $this->q->mail);
+            //TODO: Password verify
         }catch (PDOException $e){
             $admin = $e->__toString();
         }finally{
             return $admin;
         }
-
-
     }
 }
