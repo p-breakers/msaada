@@ -29,4 +29,16 @@ class router
         }
     }
 
+    /**
+     * @param $route
+     * @return array
+     */
+    private function routePart($route){
+        if (is_array($route)) {
+            $route = $route["url"];
+        }
+        $parts = explode("/", $route);
+        return $parts;
+    }
+
 }
