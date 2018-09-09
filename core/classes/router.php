@@ -8,5 +8,6 @@
 
 class router
 {
+    private $routes;
 
 }
