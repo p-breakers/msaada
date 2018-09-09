@@ -6,7 +6,7 @@
  * Time: 22:53 PM
  */
 
-class controller_ie
+interface controller_ie
 {
-
+    public function index();
 }
