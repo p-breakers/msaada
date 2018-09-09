@@ -6,16 +6,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * Date: 04/09/2018
  * Time: 20:49 PM
  */
-$Config = array();
-$Config["BASE_URL"] = 'http://'.$_SERVER["SERVER_NAME"]."/banque/";
-$Config["URL_SUFFIX"] = ".html";
-$Config["APP_NAME"] = "Banque";
-$Config["AUTHOR"] = "";
-$Config["MAIL"] = "";
-$Config["PHONE"] = "";
-$Config["ACCOUNT_TYPE"] = array("ANALYSTE", "BANQUIER", "CLIENT");
-$Config["DB"] = array();
-$Config["DB"]["HOST"] = "localhost";
-$Config["DB"]["USERNAME"] = "root";
-$Config["DB"]["PASSWORD"] = "";
-$Config["DB"]["DBNAME"] = "banque";
+$GLOBALS["config"] = array();
+$GLOBALS["config"]["BASE_URL"] = 'http://'.$_SERVER["SERVER_NAME"]."/banque/";
+$GLOBALS["config"]["URL_SUFFIX"] = ".html";
+$GLOBALS["config"]["APP_NAME"] = "Banque";
+$GLOBALS["config"]["AUTHOR"] = "";
+$GLOBALS["config"]["MAIL"] = "";
+$GLOBALS["config"]["PHONE"] = "";
+$GLOBALS["config"]["ACCOUNT_TYPE"] = array("ANALYSTE", "BANQUIER", "CLIENT");
+$GLOBALS["config"]["DB"] = array();
+$GLOBALS["config"]["DB"]["HOST"] = "localhost";
+$GLOBALS["config"]["DB"]["USERNAME"] = "root";
+$GLOBALS["config"]["DB"]["PASSWORD"] = "";
+$GLOBALS["config"]["DB"]["DBNAME"] = "banque";
+$GLOBALS["config"]["PATH"] = [
+    "app" => "app/",
+    "core" => "core/",
+    "index" => "index.php"
+];
+$GLOBALS["config"]["DEFAULTS"] = [
+    "controller" => "main",
+    "method" => "index"
+];
+$GLOBALS["config"]["routes"] = [];
+
