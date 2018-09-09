@@ -20,7 +20,8 @@ class router
         if (class_exists($route["controller"])) {
             $controller = new $route["controller"]();
             if(method_exists($controller, $route["method"])){
-                $controller->$route["method"]();
+                $method = $route['method'];
+                $controller->$method();
             } else {
                 errors::show(404);
             }
