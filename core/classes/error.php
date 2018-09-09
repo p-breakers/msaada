@@ -6,7 +6,7 @@
  * Time: 22:13 PM
  */
 
-class error
+class errors
 {
     /**
      * @param $type

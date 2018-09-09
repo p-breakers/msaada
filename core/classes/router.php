@@ -22,10 +22,10 @@ class router
             if(method_exists($controller, $route["method"])){
                 $controller->$route["method"]();
             } else {
-                error::show(404);
+                errors::show(404);
             }
         } else {
-            error::show(404);
+            errors::show(404);
         }
     }
 
