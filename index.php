@@ -22,3 +22,4 @@ $GLOBALS["config"] = array(
     )
 );
 include_once $GLOBALS["config"]["path"]['core']."autoload.php";
+new router();
