@@ -24,4 +24,4 @@ $GLOBALS["config"]["DEFAULTS"] = [
     "method" => "index"
 ];
 $GLOBALS["config"]["routes"] = [];
-include_once $GLOBALS["config"]["PATH"]['app']."config/init.php";
+include_once $GLOBALS["config"]["PATH"]['core']."autoload.php";
