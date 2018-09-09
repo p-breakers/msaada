@@ -33,7 +33,8 @@ class router
      * @param $route
      * @return array
      */
-    private function routePart($route){
+    private function routePart($route)
+    {
         if (is_array($route)) {
             $route = $route["url"];
         }
@@ -45,8 +46,8 @@ class router
      * @param $part
      * @return string
      */
-    static function uri($part){
-
+    static function uri($part)
+    {
         $parts = explode("/", $_SERVER["REQUEST_URI"]);
         if (empty($parts[0])) {
             array_shift($parts);
@@ -55,5 +56,36 @@ class router
             $part++;
         }
         return (isset($parts[$part])) ? $parts[$part] : "";
+    }
+
+    private function findRoute()
+    {
+        foreach ($this->routes as $route) {
+            $parts = $this->routePart($route);
+            $allMatch = true;
+            foreach ($parts as $key => $value) {
+                if ($value != "*"){
+                    if(router::uri($key) != $value){
+                        $allMatch = false;
+                    }
+                }
+            }
+            if($allMatch){
+                return $route;
+            }
+        }
+        $uri_1 = router::uri(1);
+        $uri_2 = router::uri(2);
+        if ($uri_1 == "") {
+            $uri_1 = $GLOBALS["config"]["defaults"]["controller"];
+        }
+        if ($uri_2 == "") {
+            $uri_2 = $GLOBALS["config"]["defaults"]["method"];
+        }
+        $route = array(
+            "controller" => $uri_1,
+            "method" => $uri_2
+        );
+        return $route;
     }
 }
