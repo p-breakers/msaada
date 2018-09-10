@@ -55,6 +55,11 @@ class database
         return $arr;
     }
 
+    /**
+     * @param string $query
+     * @param array|null $args
+     * @return bool|mysqli_result
+     */
     function query(string $query, array $args = null)
     {
         if(is_null($args)){
