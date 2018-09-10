@@ -8,6 +8,9 @@
 
 class session
 {
+    /**
+     * session constructor.
+     */
     function __construct()
     {
         if(!isset($_SESSION)){
