@@ -135,6 +135,9 @@ class database
     }
 
 
+    /**
+     * @return mixed
+     */
     function fetch_array()
     {
         return $this->result->fetch_array;
