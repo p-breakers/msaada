@@ -73,6 +73,10 @@ class url
         return $prefix.$append;
     }
 
+    /**
+     * @param string $url
+     * @return string
+     */
     static function simple(string $url)
     {
         if(strpos($url, "//") === false){
