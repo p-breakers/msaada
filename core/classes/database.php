@@ -113,4 +113,8 @@ class database
     function fetch_assoc(){
         return $this->result->fetch_assoc;
     }
+
+    function fetch_field_direct($field){
+        return $this->result->fetch_field_direct($field);
+    }
 }
