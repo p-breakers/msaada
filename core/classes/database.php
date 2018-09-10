@@ -38,7 +38,12 @@ class database
         $this->obj->select_db($database);
     }
 
-    function refValues(string $arr)
+
+    /**
+     * @param array $arr
+     * @return array
+     */
+    function refValues(array $arr)
     {
         if(strnatcmp(phpversion(), "5.3") >= 0){
             $refs = array();
