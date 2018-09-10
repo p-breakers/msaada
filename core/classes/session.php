@@ -101,7 +101,11 @@ class session
         session_destroy();
     }
 
-    static function generateSessionKey($key)
+    /**
+     * @param string $key
+     * @return string
+     */
+    static function generateSessionKey(string $key)
     {
         $append = $GLOBALS['config']['appName'];
         $version = $GLOBALS['config']['version'];
