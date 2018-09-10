@@ -24,5 +24,17 @@ class session
         }
     }
 
-
+    static function check($key){
+        if(is_array($key)){
+            $set = true;
+            foreach($key as $k){
+                if(!session::check($k)){
+                    $set = false;
+                }
+            }
+        } else {
+            $key = session::generateSessionKey($key);
+            return isset($_SESSION[$key]);
+        }
+    }
 }
