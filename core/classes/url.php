@@ -14,4 +14,9 @@ class url
         $parts = explode("/", $uri[0]);
         return(isset($parts[$number])) ? $parts[$number] : false;
     }
+
+    static function post($key)
+    {
+        return(isset($_POST[$key])) ? $_POST[$key] : false;
+    }
 }
