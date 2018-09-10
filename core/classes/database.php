@@ -14,4 +14,12 @@ class database
     public $lengths = "";
     public $num_rows = "";
 
+    function __construct($host, $username, $password, $database = null)
+    {
+        if(is_null($database)){
+            $this->obj = new mysqli($host, $username, $password);
+        } else {
+            $this->obj = new mysqli($host, $username, $password, $database);
+        }
+    }
 }
