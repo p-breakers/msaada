@@ -37,7 +37,7 @@ class url
         return(isset($_GET[$key])) ? urldecode($_GET[$key]) : false;
     }
 
-    static function request($key)
+    static function request(string $key)
     {
         if (url::get($key)) {
             return url::get($key);
