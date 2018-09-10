@@ -44,10 +44,10 @@ class router
     }
 
     /**
-     * @param $part
+     * @param string $part
      * @return string
      */
-    static function uri($part)
+    static function uri(string $part)
     {
 
         $parts = explode("/", $_SERVER["REQUEST_URI"]);
