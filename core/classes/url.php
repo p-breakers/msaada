@@ -37,6 +37,10 @@ class url
         return(isset($_GET[$key])) ? urldecode($_GET[$key]) : false;
     }
 
+    /**
+     * @param string $key
+     * @return bool|null|string
+     */
     static function request(string $key)
     {
         if (url::get($key)) {
