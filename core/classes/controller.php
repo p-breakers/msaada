@@ -6,10 +6,7 @@
  * Time: 22:26 PM
  */
 
-class controller implements controller_ie
+class controller
 {
-    public function index()
-    {
 
-    }
 }
