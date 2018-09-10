@@ -27,12 +27,27 @@ class url
 
     static function request($key)
     {
-        if(url::get($key)){
+        if (url::get($key)) {
             return url::get($key);
-        } elseif(url::post($key)){
+        } elseif (url::post($key)) {
             url::post($key);
         } else {
             return false;
         }
+        return null;
+    }
+
+    static function build($url, $params = array()){
+        if(strpos($url, "//") === false){
+            $prefix = "//".$GLOBALS["config"]["domain"];
+        } else {
+            $prefix = "";
+        }
+        $append = "";
+        foreach($params as $key => $params){
+            $append .= ($append == "") ? "?" : "&";
+            $append .= urlencode($key)."=".urlencode($params);
+        }
+        return $prefix.$append;
     }
 }
