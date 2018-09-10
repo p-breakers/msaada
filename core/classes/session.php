@@ -56,4 +56,13 @@ class session
             setcookie(session::generateSessionKey($key), $value, (time() + $ttl), "/", $_SERVER["HTTP_HOST"]);
         }
     }
+
+    static function kill($key){
+        if(isset($_SESSION[session::generateSessionKey($key)])){
+            unset($_SESSION[session::generateSessionKey($key)]);
+        }
+        if(isset($_COOKIE[session::generateSessionKey($key)])){
+            setcookie(session::generateSessionKey($key), "", (time() - 5000), "/", $_SERVER["HTTP_HOST"]);
+        }
+    }
 }
