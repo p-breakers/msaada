@@ -7,7 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * Time: 18:21 PM
  */
 
-class Model
+class Model2
 {
     public $db;
     protected $q;

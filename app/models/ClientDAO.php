@@ -6,7 +6,7 @@
  * Time: 19:58 PM
  */
 
-class ClientDAO extends Model
+class ClientDAO extends Model2
 {
     public $num_client, $nom_complet, $adresse, $nationalite, $genre, $phone, $email, $bday;
     private $motdepasse;
