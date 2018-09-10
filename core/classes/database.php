@@ -30,6 +30,9 @@ class database
         }
     }
 
+    /**
+     * @param string $database
+     */
     function changeDB(string $database)
     {
         $this->obj->select_db($database);
