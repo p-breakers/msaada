@@ -9,10 +9,10 @@
 class load
 {
     /**
-     * @param $viewFile
+     * @param string $viewFile
      * @param array $viewVars
      */
-    static function view($viewFile, $viewVars = array()){
+    static function view(string $viewFile, array  $viewVars = array()){
         extract($viewVars);
         $viewFileCheck = explode(".", $viewFile);
         if(!isset($viewFileCheck[1])){
