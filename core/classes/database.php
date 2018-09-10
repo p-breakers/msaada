@@ -96,4 +96,8 @@ class database
             }
         }
     }
+
+    function data_seek($offset = 0){
+        return $this->result->data_seek($offset);
+    }
 }
