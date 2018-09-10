@@ -160,6 +160,9 @@ class database
         return $this->result->fetch_field_direct($field);
     }
 
+    /**
+     * @return mixed
+     */
     function fetch_field()
     {
         return $this->result->fetch_field();
