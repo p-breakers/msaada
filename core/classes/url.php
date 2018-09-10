@@ -8,7 +8,11 @@
 
 class url
 {
-    static function part($number)
+    /**
+     * @param int $number
+     * @return bool
+     */
+    static function part(int $number)
     {
         $uri = explode("?", $_SERVER["REQUEST_URI"]);
         $parts = explode("/", $uri[0]);
