@@ -58,6 +58,9 @@ class router
         return (isset($parts[$part])) ? $parts[$part] : "";
     }
 
+    /**
+     * @return array
+     */
     private function findRoute()
     {
         foreach ($this->routes as $route) {
