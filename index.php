@@ -2,7 +2,8 @@
 error_reporting(E_ALL);
 ini_set("display_errors",1);
 $GLOBALS["config"] = array(
-    "addName" => "Banque",
+    "appName" => "Banque",
+    "version" => "1.0.0",
     "domain" => "localhost",
     "path" => array(
         "app" => "app/",
@@ -21,5 +22,6 @@ $GLOBALS["config"] = array(
         "name" => "banque"
     )
 );
+$GLOBALS["instances"] = array();
 include_once $GLOBALS["config"]["path"]['core']."autoload.php";
 new router();
