@@ -36,5 +36,14 @@ class session
             $key = session::generateSessionKey($key);
             return isset($_SESSION[$key]);
         }
+        return null;
+    }
+
+    static function get($key){
+        if (isset($_SESSION[session::generateSessionKey($key)])) {
+            return $_SESSION[session::generateSessionKey($key)];
+        } else {
+            return false;
+        }
     }
 }
