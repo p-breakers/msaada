@@ -133,4 +133,12 @@ class database
     function insert_id(){
         return $this->result->insert_id();
     }
+
+    function fetch_object($class_name = "stdClass", $params = null){
+        if(is_null($params)){
+            return $this->result->fetch_object($class_name);
+        } else {
+            return $this->result->fetch_object($class_name, $params);
+        }
+    }
 }
