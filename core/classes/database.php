@@ -117,7 +117,11 @@ class database
         }
     }
 
-    function data_seek($offset = 0)
+    /**
+     * @param int $offset
+     * @return mixed
+     */
+    function data_seek(int $offset = 0)
     {
         return $this->result->data_seek($offset);
     }
