@@ -143,6 +143,9 @@ class database
         return $this->result->fetch_array;
     }
 
+    /**
+     * @return mixed
+     */
     function fetch_assoc()
     {
         return $this->result->fetch_assoc;
