@@ -2,7 +2,7 @@ Options -Indexes
 Options +FollowSymlinks
 DirectoryIndex index.php
 RewriteEngine On
-RewriteBase /banque/
+RewriteBase /
 
 #disable for these filetypes
 RewriteCond %{REQUEST_URI} !\.css$
