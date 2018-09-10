@@ -8,5 +8,10 @@
 
 class database
 {
+    private $object;
+    private $result;
+    public $current_field = "";
+    public $lengths = "";
+    public $num_rows = "";
 
 }
