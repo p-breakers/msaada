@@ -6,7 +6,10 @@
  * Time: 22:36 PM
  */
 
-class main extends controller
+class main extends controller implements controller_ie
 {
-
+    function index()
+    {
+        load::view("main::index");
+    }
 }
