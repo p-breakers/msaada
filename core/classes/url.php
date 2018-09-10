@@ -28,7 +28,11 @@ class url
         return(isset($_POST[$key])) ? $_POST[$key] : false;
     }
 
-    static function get($key)
+    /**
+     * @param string $key
+     * @return bool|string
+     */
+    static function get(string $key)
     {
         return(isset($_GET[$key])) ? urldecode($_GET[$key]) : false;
     }
