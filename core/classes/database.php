@@ -117,4 +117,8 @@ class database
     function fetch_field_direct($field){
         return $this->result->fetch_field_direct($field);
     }
+
+    function fetch_field(){
+        return $this->result->fetch_field();
+    }
 }
