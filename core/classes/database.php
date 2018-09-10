@@ -126,6 +126,9 @@ class database
         return $this->result->data_seek($offset);
     }
 
+    /**
+     * @return mixed
+     */
     function fetch_all()
     {
         return $this->result->fetch_all();
