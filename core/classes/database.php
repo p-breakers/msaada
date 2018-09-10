@@ -104,4 +104,9 @@ class database
     function fetch_all(){
         return $this->result->fetch_all();
     }
+
+
+    function fetch_array(){
+        return $this->result->fetch_array;
+    }
 }
