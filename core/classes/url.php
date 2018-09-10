@@ -24,4 +24,15 @@ class url
     {
         return(isset($_GET[$key])) ? urldecode($_GET[$key]) : false;
     }
+
+    static function request($key)
+    {
+        if(url::get($key)){
+            return url::get($key);
+        } elseif(url::post($key)){
+            url::post($key);
+        } else {
+            return false;
+        }
+    }
 }
