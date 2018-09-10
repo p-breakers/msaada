@@ -22,4 +22,9 @@ class database
             $this->obj = new mysqli($host, $username, $password, $database);
         }
     }
+
+    function changeDB($database)
+    {
+        $this->obj->select_db($database);
+    }
 }
