@@ -9,6 +9,10 @@
 class model
 {
     public $model;
+
+    /**
+     * model constructor.
+     */
     function __construct(){
         $this->model = new database($GLOBALS["config"]["database"]["host"],
             $GLOBALS["config"]["database"]["username"],
