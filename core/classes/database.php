@@ -14,6 +14,13 @@ class database
     public $lengths = "";
     public $num_rows = "";
 
+    /**
+     * database constructor.
+     * @param string $host
+     * @param string $username
+     * @param string $password
+     * @param string|null $database
+     */
     function __construct(string $host, string $username, string $password, string $database = null)
     {
         if(is_null($database)){
