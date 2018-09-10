@@ -73,7 +73,7 @@ class url
         return $prefix.$append;
     }
 
-    static function simple($url)
+    static function simple(string $url)
     {
         if(strpos($url, "//") === false){
             $prefix = "//".$GLOBALS["config"]["domain"];
