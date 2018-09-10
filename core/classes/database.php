@@ -159,4 +159,8 @@ class database
         }
         return $out;
     }
+
+    function fetch_row(){
+        return $this->result->fetch_row;
+    }
 }
