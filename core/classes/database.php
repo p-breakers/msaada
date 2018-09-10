@@ -125,4 +125,8 @@ class database
     function fetch_fields(){
         return $this->result->fetch_fields();
     }
+
+    function field_seek($field){
+        return $this->result->field_seek($field);
+    }
 }
