@@ -8,7 +8,8 @@
 
 class session
 {
-    function __construct(){
+    function __construct()
+    {
         if(!isset($_SESSION)){
             session_start();
         }
@@ -24,7 +25,8 @@ class session
         }
     }
 
-    static function check($key){
+    static function check($key)
+    {
         if(is_array($key)){
             $set = true;
             foreach($key as $k){
@@ -39,7 +41,8 @@ class session
         return null;
     }
 
-    static function get($key){
+    static function get($key)
+    {
         if (isset($_SESSION[session::generateSessionKey($key)])) {
             return $_SESSION[session::generateSessionKey($key)];
         } else {
@@ -47,7 +50,8 @@ class session
         }
     }
 
-    static function set($key, $value, $ttl = 0){
+    static function set($key, $value, $ttl = 0)
+    {
         $_SESSION[session::generateSessionKey($key)] = $value;
         if ($ttl !== 0) {
             if(is_object($value) || is_array($value)){
@@ -57,7 +61,8 @@ class session
         }
     }
 
-    static function kill($key){
+    static function kill($key)
+    {
         if(isset($_SESSION[session::generateSessionKey($key)])){
             unset($_SESSION[session::generateSessionKey($key)]);
         }
@@ -66,7 +71,8 @@ class session
         }
     }
 
-    static function endSession(){
+    static function endSession()
+    {
         foreach ($_SESSION as $key => $value) {
             unset($_SESSION[$key]);
         }
@@ -76,7 +82,8 @@ class session
         session_destroy();
     }
 
-    static function generateSessionKey($key){
+    static function generateSessionKey($key)
+    {
         $append = $GLOBALS['config']['appName'];
         $version = $GLOBALS['config']['version'];
         return md5($key.$append.$version);
