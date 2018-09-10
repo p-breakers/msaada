@@ -75,4 +75,10 @@ class session
         }
         session_destroy();
     }
+
+    static function generateSessionKey($key){
+        $append = $GLOBALS['config']['appName'];
+        $version = $GLOBALS['config']['version'];
+        return md5($key.$append.$version);
+    }
 }
