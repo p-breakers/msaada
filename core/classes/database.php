@@ -163,4 +163,8 @@ class database
     function fetch_row(){
         return $this->result->fetch_row;
     }
+
+    function __destruct(){
+        $this->obj->close();
+    }
 }
