@@ -218,6 +218,9 @@ class database
         return $out;
     }
 
+    /**
+     * @return mixed
+     */
     function fetch_row(){
         return $this->result->fetch_row;
     }
