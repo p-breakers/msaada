@@ -31,10 +31,10 @@ class router
     }
 
     /**
-     * @param $route
+     * @param string $route
      * @return array
      */
-    private function routePart($route)
+    private function routePart(string $route)
     {
         if (is_array($route)) {
             $route = $route["url"];
