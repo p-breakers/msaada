@@ -8,6 +8,9 @@
 
 class controller
 {
+    /**
+     * controller constructor.
+     */
     function __construct()
     {
         $GLOBALS["instances"][] = &$this;
