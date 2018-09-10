@@ -46,4 +46,14 @@ class session
             return false;
         }
     }
+
+    static function set($key, $value, $ttl = 0){
+        $_SESSION[session::generateSessionKey($key)] = $value;
+        if ($ttl !== 0) {
+            if(is_object($value) || is_array($value)){
+                $value = json_encode($value);
+            }
+            setcookie(session::generateSessionKey($key), $value, (time() + $ttl), "/", $_SERVER["HTTP_HOST"]);
+        }
+    }
 }
