@@ -61,7 +61,12 @@ class session
         }
     }
 
-    static function set($key, $value, $ttl = 0)
+    /**
+     * @param string $key
+     * @param string $value
+     * @param int $ttl
+     */
+    static function set(string $key, string $value, int $ttl = 0)
     {
         $_SESSION[session::generateSessionKey($key)] = $value;
         if ($ttl !== 0) {
