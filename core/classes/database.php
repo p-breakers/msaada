@@ -97,48 +97,66 @@ class database
         }
     }
 
-    function data_seek($offset = 0){
+    function data_seek($offset = 0)
+    {
         return $this->result->data_seek($offset);
     }
 
-    function fetch_all(){
+    function fetch_all()
+    {
         return $this->result->fetch_all();
     }
 
 
-    function fetch_array(){
+    function fetch_array()
+    {
         return $this->result->fetch_array;
     }
 
-    function fetch_assoc(){
+    function fetch_assoc()
+    {
         return $this->result->fetch_assoc;
     }
 
-    function fetch_field_direct($field){
+    function fetch_field_direct($field)
+    {
         return $this->result->fetch_field_direct($field);
     }
 
-    function fetch_field(){
+    function fetch_field()
+    {
         return $this->result->fetch_field();
     }
 
-    function fetch_fields(){
+    function fetch_fields()
+    {
         return $this->result->fetch_fields();
     }
 
-    function field_seek($field){
+    function field_seek($field)
+    {
         return $this->result->field_seek($field);
     }
 
-    function insert_id(){
+    function insert_id()
+    {
         return $this->result->insert_id();
     }
 
-    function fetch_object($class_name = "stdClass", $params = null){
+    function fetch_object($class_name = "stdClass", $params = null)
+    {
         if(is_null($params)){
             return $this->result->fetch_object($class_name);
         } else {
             return $this->result->fetch_object($class_name, $params);
         }
+    }
+
+    function fetch_all_kv(){
+        $out = array();
+        while($row = $this->result->fetch_assoc()){
+            $out[] = $row;
+        }
+        return $out;
     }
 }
