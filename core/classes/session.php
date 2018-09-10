@@ -28,6 +28,10 @@ class session
         }
     }
 
+    /**
+     * @param string|array $key
+     * @return bool|null
+     */
     static function check($key)
     {
         if(is_array($key)){
