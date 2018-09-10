@@ -48,7 +48,11 @@ class session
         return null;
     }
 
-    static function get($key)
+    /**
+     * @param string $key
+     * @return bool
+     */
+    static function get(string $key)
     {
         if (isset($_SESSION[session::generateSessionKey($key)])) {
             return $_SESSION[session::generateSessionKey($key)];
