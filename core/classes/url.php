@@ -8,5 +8,10 @@
 
 class url
 {
-
+    static function part($number)
+    {
+        $uri = explode("?", $_SERVER["REQUEST_URI"]);
+        $parts = explode("/", $uri[0]);
+        return(isset($parts[$number])) ? $parts[$number] : false;
+    }
 }
