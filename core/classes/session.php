@@ -77,7 +77,10 @@ class session
         }
     }
 
-    static function kill($key)
+    /**
+     * @param string $key
+     */
+    static function kill(string $key)
     {
         if(isset($_SESSION[session::generateSessionKey($key)])){
             unset($_SESSION[session::generateSessionKey($key)]);
