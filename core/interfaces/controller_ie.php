@@ -8,5 +8,8 @@
 
 interface controller_ie
 {
+    /**
+     * @return mixed
+     */
     public function index();
 }
