@@ -151,7 +151,11 @@ class database
         return $this->result->fetch_assoc;
     }
 
-    function fetch_field_direct($field)
+    /**
+     * @param string $field
+     * @return mixed
+     */
+    function fetch_field_direct(string $field)
     {
         return $this->result->fetch_field_direct($field);
     }
