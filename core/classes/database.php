@@ -121,4 +121,8 @@ class database
     function fetch_field(){
         return $this->result->fetch_field();
     }
+
+    function fetch_fields(){
+        return $this->result->fetch_fields();
+    }
 }
