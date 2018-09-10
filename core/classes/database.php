@@ -109,4 +109,8 @@ class database
     function fetch_array(){
         return $this->result->fetch_array;
     }
+
+    function fetch_assoc(){
+        return $this->result->fetch_assoc;
+    }
 }
