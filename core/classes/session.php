@@ -65,4 +65,14 @@ class session
             setcookie(session::generateSessionKey($key), "", (time() - 5000), "/", $_SERVER["HTTP_HOST"]);
         }
     }
+
+    static function endSession(){
+        foreach ($_SESSION as $key => $value) {
+            unset($_SESSION[$key]);
+        }
+        foreach($_COOKIE as $key => $value){
+            setcookie($key, "", (time() - 5000), "/", "HTTP_HOST");
+        }
+        session_destroy();
+    }
 }
