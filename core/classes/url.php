@@ -19,7 +19,11 @@ class url
         return(isset($parts[$number])) ? $parts[$number] : false;
     }
 
-    static function post($key)
+    /**
+     * @param string $key
+     * @return bool
+     */
+    static function post(string $key)
     {
         return(isset($_POST[$key])) ? $_POST[$key] : false;
     }
