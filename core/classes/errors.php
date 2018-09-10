@@ -9,9 +9,9 @@
 class errors
 {
     /**
-     * @param $type
+     * @param int $type
      */
-    static function show($type){
+    static function show(int $type){
         switch ($type) {
             case 404:
                 echo "La page n'a pu &ecirc;tre trouv&eacute; ERREUR {$type} !";
