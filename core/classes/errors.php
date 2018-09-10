@@ -14,7 +14,7 @@ class errors
     static function show($type){
         switch ($type) {
             case 404:
-                echo "La page !<br>{$type} n'a pu &egrave;tre trouv&acute; ERREUR !";
+                echo "La page ! {$type} n'a pu &ecirc;tre trouv&eacute; ERREUR !";
                 break;
 
             default:
