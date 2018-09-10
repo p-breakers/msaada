@@ -168,6 +168,9 @@ class database
         return $this->result->fetch_field();
     }
 
+    /**
+     * @return mixed
+     */
     function fetch_fields()
     {
         return $this->result->fetch_fields();
