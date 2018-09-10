@@ -19,4 +19,9 @@ class url
     {
         return(isset($_POST[$key])) ? $_POST[$key] : false;
     }
+
+    static function get($key)
+    {
+        return(isset($_GET[$key])) ? urldecode($_GET[$key]) : false;
+    }
 }
