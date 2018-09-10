@@ -185,6 +185,9 @@ class database
         return $this->result->field_seek($field);
     }
 
+    /**
+     * @return mixed
+     */
     function insert_id()
     {
         return $this->result->insert_id();
