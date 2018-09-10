@@ -1,7 +1,9 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: ITOT
- * Date: 10/09/2018
- * Time: 23:28 PM
- */
+<?php load::view("template::head")?>
+    <div class="starter-template">
+        <h1>Bootstrap starter template</h1>
+        <p class="lead">
+            Use this document as a way to quickly start any new project.<br>
+            All you get is this text and a mostly barebones HTML document.
+        </p>
+    </div>
+<?php load::view("template::foot")?>
