@@ -193,7 +193,12 @@ class database
         return $this->result->insert_id();
     }
 
-    function fetch_object($class_name = "stdClass", $params = null)
+    /**
+     * @param string $class_name
+     * @param array|null $params
+     * @return mixed
+     */
+    function fetch_object(string $class_name = "stdClass", array $params = null)
     {
         if(is_null($params)){
             return $this->result->fetch_object($class_name);
