@@ -53,7 +53,12 @@ class url
         return null;
     }
 
-    static function build($url, $params = array())
+    /**
+     * @param string $url
+     * @param array $params
+     * @return string
+     */
+    static function build(string $url, array $params = array())
     {
         if(strpos($url, "//") === false){
             $prefix = "//".$GLOBALS["config"]["domain"];
