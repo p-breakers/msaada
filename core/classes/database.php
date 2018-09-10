@@ -207,6 +207,9 @@ class database
         }
     }
 
+    /**
+     * @return array
+     */
     function fetch_all_kv(){
         $out = array();
         while($row = $this->result->fetch_assoc()){
