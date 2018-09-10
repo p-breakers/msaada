@@ -49,10 +49,9 @@ class router
      */
     static function uri($part)
     {
+
         $parts = explode("/", $_SERVER["REQUEST_URI"]);
-        if (empty($parts[0])) {
-            array_shift($parts);
-        }
+
         if($parts[1] == $GLOBALS["config"]["path"]["index"]){
             $part++;
         }
