@@ -37,7 +37,8 @@ class url
         return null;
     }
 
-    static function build($url, $params = array()){
+    static function build($url, $params = array())
+    {
         if(strpos($url, "//") === false){
             $prefix = "//".$GLOBALS["config"]["domain"];
         } else {
@@ -49,5 +50,15 @@ class url
             $append .= urlencode($key)."=".urlencode($params);
         }
         return $prefix.$append;
+    }
+
+    static function simple($url)
+    {
+        if(strpos($url, "//") === false){
+            $prefix = "//".$GLOBALS["config"]["domain"];
+        } else {
+            $prefix = "";
+        }
+        return $prefix;
     }
 }
