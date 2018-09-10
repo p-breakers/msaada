@@ -129,4 +129,8 @@ class database
     function field_seek($field){
         return $this->result->field_seek($field);
     }
+
+    function insert_id(){
+        return $this->result->insert_id();
+    }
 }
