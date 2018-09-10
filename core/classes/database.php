@@ -176,7 +176,11 @@ class database
         return $this->result->fetch_fields();
     }
 
-    function field_seek($field)
+    /**
+     * @param string $field
+     * @return mixed
+     */
+    function field_seek(string $field)
     {
         return $this->result->field_seek($field);
     }
