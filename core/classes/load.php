@@ -12,7 +12,8 @@ class load
      * @param string $viewFile
      * @param array $viewVars
      */
-    static function view(string $viewFile, array  $viewVars = array()){
+    static function view(string $viewFile, array  $viewVars = array())
+    {
         extract($viewVars);
         $viewFileCheck = explode(".", $viewFile);
         if(!isset($viewFileCheck[1])){
@@ -20,5 +21,10 @@ class load
         }
         $viewFile = str_replace("::", "/", $viewFile);
         require_once $GLOBALS["config"]["path"]["app"]."views/{$viewFile}";
+    }
+
+    static function func()
+    {
+
     }
 }
