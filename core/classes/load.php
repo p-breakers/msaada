@@ -23,8 +23,13 @@ class load
         require_once $GLOBALS["config"]["path"]["app"]."views/{$viewFile}";
     }
 
-    static function func()
+    static function func(string $function)
     {
-
+        if (is_file($GLOBALS['config']['path']['core']."functions/".$function)) {
+            $require = $GLOBALS['config']['path']['core']."functions/".$function;
+        }elseif (is_file($GLOBALS['config']['path']['app']."functions/".$function)) {
+            $require = $GLOBALS['config']['path']['app']."functions/".$function;
+        }
+        require_once $require;
     }
 }
