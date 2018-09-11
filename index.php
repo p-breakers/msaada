@@ -6,6 +6,7 @@ $GLOBALS["config"] = array(
     "appName" => "Banque",
     "version" => "1.0.0",
     "domain" => $_SERVER['SERVER_NAME'],
+    "extension" => "html",
     "path" => array(
         "app" => "app/",
         "core" => "core/",
