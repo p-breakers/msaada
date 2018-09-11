@@ -1,7 +1,7 @@
 </div>
 <!--copy rights start here-->
 <div class="copyrights">
-    <p>© <?= date("Y"); ?> Eunice Bank. Tous droits r&eacute;serv&eacute; | Design by  <a href="http://localhost/" target="_blank">Eunice</a> </p>
+    <p>© <?= date("Y"); ?> Eunice Bank. Tous droits r&eacute;serv&eacute; | Design by  <a href="http://localhost/" target="_blank"><?= $GLOBALS['config']['author'] ?></a> </p>
 </div>
 <!--copy rights end here-->
 <!-- js -->
