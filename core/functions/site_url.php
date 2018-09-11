@@ -1,7 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ITOT
- * Date: 11/09/2018
- * Time: 23:36 PM
- */
+function site_url(string $url)
+{
+    if (isset($GLOBALS["config"]['extension']))
+        return "http://".$GLOBALS['config']['domain']."/".$url.".".$GLOBALS["config"]['extension'];
+    else
+        return "http://".$GLOBALS['config']['domain']."/".$url.".php";
+}
