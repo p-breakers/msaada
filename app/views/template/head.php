@@ -11,11 +11,17 @@
     <!-- //custom-theme -->
     <link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
     <link href="assets/css/component.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="assets/css/export.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="assets/css/flipclock.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="assets/css/circles.css" rel="stylesheet" type="text/css" media="all" />
     <link href="assets/css/style_grid.css" rel="stylesheet" type="text/css" media="all" />
     <link href="assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
+
     <!-- font-awesome-icons -->
     <link href="assets/css/font-awesome.css" rel="stylesheet">
     <!-- //font-awesome-icons -->
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
+
 </head>
 <body>
+<div class="wthree_agile_admin_info">
