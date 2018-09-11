@@ -5,7 +5,7 @@ ini_set("display_errors",1);
 $GLOBALS["config"] = array(
     "appName" => "Banque",
     "version" => "1.0.0",
-    "domain" => "localhost",
+    "domain" => $_SERVER['SERVER_NAME'],
     "path" => array(
         "app" => "app/",
         "core" => "core/",
