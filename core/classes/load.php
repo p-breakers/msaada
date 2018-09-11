@@ -23,6 +23,9 @@ class load
         require_once $GLOBALS["config"]["path"]["app"]."views/{$viewFile}";
     }
 
+    /**
+     * @param string $function
+     */
     static function func(string $function)
     {
         if (is_file($GLOBALS['config']['path']['core']."functions/".$function)) {
