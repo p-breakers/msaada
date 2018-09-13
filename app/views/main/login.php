@@ -8,13 +8,13 @@
         <div class="registration admin_agile">
 
             <div class="signin-form profile admin">
-                <h2>Admin Login</h2>
+                <h2>Connexion Admin</h2>
                 <div class="login-form">
-                    <form action="main-page.html" method="post">
-                        <input type="text" name="name" value="Username" required="">
-                        <input type="password" name="password" value="Password" required="">
+                    <form action="<?= site::base_url("main/login_verify") ?>" method="post">
+                        <input type="text" name="name" placeholder="Nom d'utilisateur" required="">
+                        <input type="password" name="password" placeholder="Mot de passe" required="">
                         <div class="tp">
-                            <input type="submit" value="LOGIN">
+                            <input type="submit" value="CONNEXION">
                         </div>
 
                     </form>
@@ -27,7 +27,7 @@
                     </ul>
                 </div>
 
-                <h6><a href="main-page.html">Back To Home</a><h6>
+                <h6><a href="<?= site::base_url() ?>">Retour à l'accueil</a><h6>
 
 
             </div>
