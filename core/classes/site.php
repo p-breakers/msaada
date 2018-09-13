@@ -23,8 +23,8 @@ class site
      */
     static function site_url(string $url)
     {
-        if (isset($GLOBALS["config"]['extension']))
-            return "http://".$GLOBALS['config']['domain']."/".$url.".".$GLOBALS["config"]['url_suffix'];
+        if (isset($GLOBALS["config"]['url_suffix']))
+            return "http://".$GLOBALS['config']['domain']."/".$url.$GLOBALS["config"]['url_suffix'];
         else
             return "http://".$GLOBALS['config']['domain']."/".$url.".php";
     }
