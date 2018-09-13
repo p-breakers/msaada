@@ -28,4 +28,9 @@ class site
         else
             return "http://".$GLOBALS['config']['domain']."/".$url.".php";
     }
+
+    static function redirect(string $page = null)
+    {
+        header("location: http://".$GLOBALS['config']['domain']."/".$page);
+    }
 }
