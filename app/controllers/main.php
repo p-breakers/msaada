@@ -10,7 +10,7 @@ class main extends controller implements controller_ie
 {
     function index()
     {
-        if (isset($_SESSION['user']))
+        if (session::get('user'))
             load::view("main::index");
         else
             site::redirect("main/login");
@@ -18,7 +18,7 @@ class main extends controller implements controller_ie
 
     function login()
     {
-        if (!isset($_SESSION['user']))
+        if (!session::get('user'))
             load::view("main::login");
         else
             site::redirect();
