@@ -4,6 +4,7 @@ DirectoryIndex index.php
 RewriteEngine On
 RewriteBase /
 
+RewriteCond $1 !^(index\.php|robots\.txt|favicon\.ico|glody/)
 #disable for these filetypes
 RewriteCond %{REQUEST_URI} !\.css$
 RewriteCond %{REQUEST_URI} !\.svg$
