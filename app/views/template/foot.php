@@ -6,13 +6,13 @@
 <!--copy rights end here-->
 <!-- js -->
 
-<script type="text/javascript" src="assets/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="<?= site::base_url("assets/js/jquery-2.1.4.min.js") ?>"></script>
 
 <!-- /amcharts -->
-<script src="assets/js/amcharts.js"></script>
-<script src="assets/js/serial.js"></script>
-<script src="assets/js/export.js"></script>
-<script src="assets/js/light.js"></script>
+<script src="<?= site::base_url("assets/js/amcharts.js") ?>"></script>
+<script src="<?= site::base_url("assets/js/serial.js") ?>"></script>
+<script src="<?= site::base_url("assets/js/export.js") ?>"></script>
+<script src="<?= site::base_url("assets/js/light.js") ?>"></script>
 <!-- Chart code -->
 <script>
     var chart = AmCharts.makeChart("chartdiv", {
@@ -226,19 +226,19 @@
 </script>
 
 <!-- //amcharts -->
-<script src="assets/js/chart1.js"></script>
-<script src="assets/js/Chart.min.js"></script>
-<script src="assets/js/modernizr.custom.js"></script>
+<script src="<?= site::base_url("assets/js/chart1.js") ?>"></script>
+<script src="<?= site::base_url("assets/js/Chart.min.js") ?>"></script>
+<script src="<?= site::base_url("assets/js/modernizr.custom.js") ?>"></script>
 
-<script src="assets/js/classie.js"></script>
-<script src="assets/js/gnmenu.js"></script>
+<script src="<?= site::base_url("assets/js/classie.js") ?>"></script>
+<script src="<?= site::base_url("assets/js/gnmenu.js") ?>"></script>
 <script>
     new gnMenu( document.getElementById( 'gn-menu' ) );
 </script>
 <!-- script-for-menu -->
 
 <!-- /circle-->
-<script type="text/javascript" src="assets/js/circles.js"></script>
+<script type="text/javascript" src="<?= site::base_url("assets/js/circles.js") ?>"></script>
 <script>
     var colors = [
         ['#ffffff', '#fd9426'], ['#ffffff', '#fc3158'],['#ffffff', '#53d769'], ['#ffffff', '#147efb']
@@ -261,7 +261,7 @@
 </script>
 <!-- //circle -->
 <!--skycons-icons-->
-<script src="assets/js/skycons.js"></script>
+<script src="<?= site::base_url("assets/js/skycons.js") ?>"></script>
 <script>
     var icons = new Skycons({"color": "#fcb216"}),
         list  = [
@@ -286,7 +286,7 @@
 </script>
 <!--//skycons-icons-->
 <!-- //js -->
-<script src="assets/js/screenfull.js"></script>
+<script src="<?= site::base_url("assets/js/screenfull.js") ?>"></script>
 <script>
     $(function () {
         $('#supported').text('Supported/allowed: ' + !!screenfull.enabled);
@@ -302,7 +302,7 @@
         });
     });
 </script>
-<script src="assets/js/flipclock.js"></script>
+<script src="<?= site::base_url("assets/js/flipclock.js") ?>"></script>
 
 <script type="text/javascript">
     var clock;
@@ -313,11 +313,11 @@
         });
     });
 </script>
-<script src="assets/js/bars.js"></script>
-<script src="assets/js/jquery.nicescroll.js"></script>
-<script src="assets/js/scripts.js"></script>
+<script src="<?= site::base_url("assets/js/bars.js") ?>"></script>
+<script src="<?= site::base_url("assets/js/jquery.nicescroll.js") ?>"></script>
+<script src="<?= site::base_url("assets/js/scripts.js") ?>"></script>
 
-<script type="text/javascript" src="assets/js/bootstrap-3.1.1.min.js"></script>
+<script type="text/javascript" src="<?= site::base_url("assets/js/bootstrap-3.1.1.min.js") ?>"></script>
 
 </body>
 </html>
