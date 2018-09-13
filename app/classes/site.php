@@ -8,5 +8,12 @@
 
 class site
 {
-
+    /**
+     * @param string|null $string
+     * @return string
+     */
+    static function base_url(string $string = null)
+    {
+        return "http://".$GLOBALS['config']['domain']."/".$string;
+    }
 }
