@@ -16,8 +16,7 @@ RewriteCond %{REQUEST_URI} !\.png$
 RewriteCond %{REQUEST_URI} !\.jpg$
 RewriteCond %{REQUEST_URI} !\.gif$
 RewriteCond %{REQUEST_URI} !\.zip$
-RewriteCond %{REQUEST_URI} !\.html$
-RewriteCond %{REQUEST_URI} !\.js$
+RewriteCond %{REQUEST_URI} !\.js
 
 
 RewriteRule . index.php
