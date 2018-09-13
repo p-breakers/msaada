@@ -23,4 +23,12 @@ class main extends controller implements controller_ie
         else
             site::redirect();
     }
+
+    function login_verify()
+    {
+        //TODO: Implement this method
+        if ($_SERVER['REQUEST_METHOD'] == "POST") {
+
+        }
+    }
 }
