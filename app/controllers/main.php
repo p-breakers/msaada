@@ -8,6 +8,10 @@
 
 class main extends controller implements controller_ie
 {
+
+    /**
+     * @return mixed|void
+     */
     function index()
     {
         if (session::get('user'))
