@@ -34,6 +34,10 @@ class main extends controller implements controller_ie
             $post = new post();
             $adminDAO = new AdminDAO();
             $admin = $adminDAO->connexion($post->encoded['name'], $post->get['password']);
+            if ($admin) {
+                site::redirect($admin['type']);
+            } else
+                site::redirect();
         } else {
             site::redirect();
         }
@@ -52,5 +56,13 @@ class main extends controller implements controller_ie
     public function test()
     {
         echo Admin::password_hash("123456");
+    }
+
+    function deconnexion()
+    {
+        foreach ($_SESSION as $item => $value) {
+            session::kill($item);
+        }
+        site::redirect();
     }
 }
