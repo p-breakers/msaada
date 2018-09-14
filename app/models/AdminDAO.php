@@ -30,8 +30,8 @@ class AdminDAO extends Model2
             $admin = "";
             $result = $this->q->fetch();
             if ($result['type'] == "banquier") $admin = new Banquier($result['id_admin'], $result['nom_complet'], $result['phone'], $result['motdepasse'], $result['mail']); elseif ($result['type'] == "analyste") $admin = new Analyste($result['id_admin'], $result['nom_complet'], $result['phone'], $result['motdepasse'], $result['mail']);
-            if (Admin::password_verify($motdepasse, $admin->getMotdepasse()) !== true)
-                $admin = false;
+
+            if (Admin::password_verify($motdepasse, $admin->getMotdepasse()) !== true) $admin = false; else foreach ($result as $item => $value) if ($item != "motdepasse") session::set($item, $value, 300);
         }catch (PDOException $e){
             $admin = $e->__toString();
         }finally{
