@@ -16,7 +16,7 @@
         } </script>
     <!-- //custom-theme -->
     <link href="<?= site::base_url("assets/css/bootstrap.css") ?>" rel="stylesheet" type="text/css" media="all"/>
-    <link href="<?= site::base_url("assets/css/snow.css") ?>" rel="stylesheet" type="text/css" media="all"/>
+    <link href="<?= site::base_url("assets/css/snow.min.css") ?>" rel="stylesheet" type="text/css" media="all"/>
     <link href="<?= site::base_url("assets/css/component.css") ?>" rel="stylesheet" type="text/css" media="all"/>
     <link href="<?= site::base_url("assets/css/style_grid.css") ?>" rel="stylesheet" type="text/css" media="all"/>
     <link href="<?= site::base_url("assets/css/style.css") ?>" rel="stylesheet" type="text/css" media="all"/>
@@ -82,7 +82,7 @@
 </script>
 <script src="<?= site::base_url("assets/js/jquery.nicescroll.js") ?>"></script>
 <script src="<?= site::base_url("assets/js/scripts.js") ?>"></script>
-<script src="<?= site::base_url("assets/js/snow.js") ?>"></script>
+<script src="<?= site::base_url("assets/js/snow.min.js") ?>"></script>
 <script type="text/javascript" src="<?= site::base_url("assets/js/bootstrap-3.1.1.min.js") ?>"></script>
 </body>
 </html>
