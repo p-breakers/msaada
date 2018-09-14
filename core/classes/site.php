@@ -34,6 +34,7 @@ class site
      */
     static function redirect(string $page = null)
     {
+        if ($page != null) $page .= $GLOBALS['config']['url_suffix'];
         header("location: http://".$GLOBALS['config']['domain']."/".$page);
     }
 }
