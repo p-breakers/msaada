@@ -8,6 +8,9 @@ spl_autoload_register(function($class){
     } elseif(file_exists("{$corePath}classes/{$class}.php")){
         $instantiable = true;
         require_once "{$corePath}classes/{$class}.php";
+    } elseif (file_exists("{$appPath}classes/{$class}.php")) {
+        $instantiable = false;
+        require_once "{$appPath}classes/{$class}.php";
     } elseif(file_exists("{$corePath}interfaces/{$class}.php")){
         $instantiable = false;
         require_once "{$corePath}interfaces/{$class}.php";
