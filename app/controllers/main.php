@@ -39,6 +39,11 @@ class main extends controller implements controller_ie
         }
     }
 
+    function banquier()
+    {
+
+    }
+
     public function test()
     {
         echo Admin::password_hash("123456");
