@@ -26,9 +26,17 @@ class main extends controller implements controller_ie
 
     function login_verify()
     {
-        //TODO: Implement this method
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
-
+            $post = new post();
+            $adminDAO = new AdminDAO();
+            $admin = $adminDAO->connexion($post->encoded['name'], $post->get['password']);
+        } else {
+            site::redirect();
         }
+    }
+
+    public function test()
+    {
+        echo Admin::password_hash("123456");
     }
 }
