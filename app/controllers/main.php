@@ -14,10 +14,10 @@ class main extends controller implements controller_ie
      */
     function index()
     {
-        if (session::get('user'))
+        if (session::check('id_admin'))
             load::view("main::index");
         else
-            site::redirect("main/login");
+            site::redirect("main::login");
     }
 
     function login()
@@ -45,12 +45,16 @@ class main extends controller implements controller_ie
 
     function banquier()
     {
-
+        if (session::get("type") !== "banquier") site::redirect(); else {
+            load::view("main::banquier");
+        }
     }
 
     function analyste()
     {
-
+        if (session::get("type") !== "analyste") site::redirect(); else {
+            load::view("main::analyste");
+        }
     }
 
     public function test()
