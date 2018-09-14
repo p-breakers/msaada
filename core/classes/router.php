@@ -44,14 +44,14 @@ class router
     }
 
     /**
-     * @param string $part
+     * @param int $part
      * @return string
      */
-    static function uri(string $part)
+    static function uri(int $part)
     {
 
         $parts = explode("/", $_SERVER["REQUEST_URI"]);
-
+        $parts[count($parts) - 1] = str_replace($GLOBALS['config']['url_suffix'], "", end($parts));
         if($parts[1] == $GLOBALS["config"]["path"]["index"]){
             $part++;
         }
