@@ -8,5 +8,14 @@
 
 class post
 {
+    public $encoded = [];
+    public $get = [];
 
+    public function __construct()
+    {
+        foreach ($_POST as $item => $value) {
+            $this->encoded[$item] = helper::htmlencode($value);
+            $this->get[$item] = $value;
+        }
+    }
 }
