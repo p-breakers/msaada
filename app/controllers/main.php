@@ -17,12 +17,12 @@ class main extends controller implements controller_ie
         if (session::check('id_admin'))
             load::view("main::index");
         else
-            site::redirect("main::login");
+            site::redirect("main/login");
     }
 
     function login()
     {
-        if (!session::get('user'))
+        if (!session::check('id_admin'))
             load::view("main::login");
         else
             site::redirect();
@@ -35,7 +35,7 @@ class main extends controller implements controller_ie
             $adminDAO = new AdminDAO();
             $admin = $adminDAO->connexion($post->encoded['name'], $post->get['password']);
             if ($admin) {
-                site::redirect($admin['type']);
+                site::redirect("main/" . $admin->type);
             } else
                 site::redirect();
         } else {
@@ -45,14 +45,14 @@ class main extends controller implements controller_ie
 
     function banquier()
     {
-        if (session::get("type") !== "banquier") site::redirect(); else {
+        if (session::check("type") !== "banquier") site::redirect(); else {
             load::view("main::banquier");
         }
     }
 
     function analyste()
     {
-        if (session::get("type") !== "analyste") site::redirect(); else {
+        if (session::check("type") !== "analyste") site::redirect(); else {
             load::view("main::analyste");
         }
     }
@@ -64,9 +64,7 @@ class main extends controller implements controller_ie
 
     function deconnexion()
     {
-        foreach ($_SESSION as $item => $value) {
-            session::kill($item);
-        }
+        session::endSession();
         site::redirect();
     }
 }
