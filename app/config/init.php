@@ -7,7 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * Time: 20:49 PM
  */
 $GLOBALS["config"] = array();
-$GLOBALS["config"]["BASE_URL"] = 'http://'.$_SERVER["SERVER_NAME"]."/banque/";
+$GLOBALS["config"]["BASE_URL"] = 'http://' . $_SERVER["SERVER_NAME"];
 $GLOBALS["config"]["URL_SUFFIX"] = ".html";
 $GLOBALS["config"]["APP_NAME"] = "Banque";
 $GLOBALS["config"]["AUTHOR"] = "";
