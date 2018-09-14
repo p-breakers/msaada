@@ -1,5 +1,4 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
 /**
  * Created by PhpStorm.
  * User: ITOT
@@ -135,7 +134,7 @@ class Admin
      * @param $password
      * @return bool|string
      */
-    public function password_hash($password)
+    static function password_hash($password)
     {
         return password_hash($password, PASSWORD_ARGON2I,["cost" => 18]);
     }
@@ -145,7 +144,7 @@ class Admin
      * @param $encrypt
      * @return bool
      */
-    public function password_verify($password, $encrypt)
+    static function password_verify($password, $encrypt)
     {
         return password_verify($password, $encrypt);
     }
