@@ -1,5 +1,4 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
 /**
  * Created by PhpStorm.
  * User: ITOT
@@ -29,11 +28,9 @@ class AdminDAO extends Model2
                 "nom_complet" => $email
             ]);
             $admin = "";
-            if ($this->q->type == "banquier")
-                $admin = new Banquier($this->q->id, $this->q->nom_complet, $this->q->phone, $this->q->motdepasse, $this->q->mail);
-            elseif ($this->q->type == "analyste")
-                $admin = new Analyste($this->q->id, $this->q->nom_complet, $this->q->phone, $this->q->motdepasse, $this->q->mail);
-            if ($admin->password_verify($motdepasse, $admin->getMotdepasse()) !== true)
+            $result = $this->q->fetch();
+            if ($result['type'] == "banquier") $admin = new Banquier($result['id_admin'], $result['nom_complet'], $result['phone'], $result['motdepasse'], $result['mail']); elseif ($result['type'] == "analyste") $admin = new Analyste($result['id_admin'], $result['nom_complet'], $result['phone'], $result['motdepasse'], $result['mail']);
+            if (Admin::password_verify($motdepasse, $admin->getMotdepasse()) !== true)
                 $admin = false;
         }catch (PDOException $e){
             $admin = $e->__toString();
