@@ -16,7 +16,6 @@
                         <div class="tp">
                             <input type="submit" value="CONNEXION">
                         </div>
-
                     </form>
                 </div>
                 <div class="login-social-grids admin_w3">
