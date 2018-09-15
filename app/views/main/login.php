@@ -27,4 +27,7 @@
         </div>
         <!-- //inner_content_w3_agile_info-->
     </div>
+    <script type="application/javascript">
+        document.body.style.backgroundImage = "url(<?= site::base_url("assets/images/bottom.jpg") ?>)";
+    </script>
     <?php load::view("template::foot") ?>
