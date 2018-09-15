@@ -45,15 +45,25 @@ class main extends controller implements controller_ie
 
     function banquier()
     {
-        if (session::check("type") !== "banquier") site::redirect(); else {
-            load::view("main::banquier");
+        if (session::check("type")) {
+            if (session::get("type") != "banquier") site::redirect(); else {
+                load::view("main::banquier");
+            }
+
+        } else {
+            site::redirect();
         }
     }
 
     function analyste()
     {
-        if (session::check("type") !== "analyste") site::redirect(); else {
-            load::view("main::analyste");
+        if (session::check("type")) {
+            if (session::get("type") != "analyste") site::redirect(); else {
+                load::view("main::analyste");
+            }
+
+        } else {
+            site::redirect();
         }
     }
 
