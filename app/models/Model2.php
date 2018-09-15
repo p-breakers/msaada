@@ -10,6 +10,7 @@ class Model2
 {
     public $db;
     protected $q;
+    protected $d;
 
     /**
      * @return mixed
