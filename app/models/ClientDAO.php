@@ -54,11 +54,27 @@ class ClientDAO extends Model2
                 "bday" => $bday,
                 "motdepasse" => $motdepasse
             ]);
-            $d = true;
+            $this->d = true;
         }catch (PDOException $e){
-            $d = $e->getMessage();
+            $this->d = $e->getMessage();
         }finally{
-            return $d;
+            return $this->d;
+        }
+    }
+
+    /**
+     * @return string|array
+     */
+    public function getAllClient()
+    {
+        try {
+            $this->q = $this->db->prepare("SELECT * FROM clients");
+            $this->q->execute();
+            $this->d = $this->q->fetch();
+        } catch (PDOException $e) {
+            $this->d = $e->__toString();
+        } finally {
+            return $this->d;
         }
     }
 }
