@@ -77,4 +77,22 @@ class ClientDAO extends Model2
             return $this->d;
         }
     }
+
+    /**
+     * @param string $name
+     * @return string
+     */
+    public function getClientByName(string $name)
+    {
+        $name = htmlentities(addslashes($name));
+        try {
+            $this->q = $this->db->prepare("SELECT * FROM clients WHERE nom_complet LIKE %{$name}%");
+            $this->q->execute();
+            $this->d = $this->q->fetch();
+        } catch (PDOException $e) {
+            $this->d = $e->__toString();
+        } finally {
+            return $this->d;
+        }
+    }
 }
