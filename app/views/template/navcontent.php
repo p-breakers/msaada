@@ -3,13 +3,15 @@
             <li class="dropdown profile_details_drop">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                     <div class="profile_img">
-                        <span class="prfil-img"><img src="assets/images/admin.jpg" alt=""> </span>
+                        <span class="prfil-img"><img src="<?= site::base_url("assets/images/admin.png") ?>"
+                                                     alt=""> </span>
                     </div>
                 </a>
                 <ul class="dropdown-menu drp-mnu">
-                    <li> <a href="#"><i class="fa fa-cog"></i> Settings</a> </li>
-                    <li> <a href="#"><i class="fa fa-user"></i> Profile</a> </li>
-                    <li> <a href="#"><i class="fa fa-sign-out"></i> Logout</a> </li>
+                    <li><a href="#"><i class="fa fa-cog"></i> Paramètres</a></li>
+                    <li><a href="#"><i class="fa fa-user"></i> Profil</a></li>
+                    <li><a href="<?= site::site_url("main/deconnexion") ?>"><i class="fa fa-sign-out"></i>
+                            Déconnexion</a></li>
                 </ul>
             </li>
 
@@ -175,7 +177,6 @@
     </li>
 
     <li class="second w3l_search">
-
         <form action="#" method="post">
             <input type="search" name="search" placeholder="Search here..." required="">
             <button class="btn btn-default" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
