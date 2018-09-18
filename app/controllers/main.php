@@ -35,7 +35,9 @@ class main extends controller implements controller_ie
             $adminDAO = new AdminDAO();
             $admin = $adminDAO->connexion($post->encoded['name'], $post->get['password']);
             if ($admin) {
-                site::redirect("main/" . $admin->type);
+                $type = "";
+                if ($admin->type == "banquier") $type = "bankier"; elseif ($admin->type == "analyste") $type = "analyst";
+                site::redirect($type);
             } else
                 site::redirect();
         } else {
