@@ -33,11 +33,11 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="<?= site::site_url("bankier/list_comptes") ?>">
                             <i class="fa fa-tasks" aria-hidden="true"></i>
                             <div class="ca-content">
-                                <h4 class="ca-main three">49,436</h4>
-                                <h3 class="ca-sub three">Old Projects</h3>
+                                <h4 class="ca-main three"><?= $nbCompte ?></h4>
+                                <h3 class="ca-sub three">Liste des comptes</h3>
                             </div>
                         </a>
                     </li>
