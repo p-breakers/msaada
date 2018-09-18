@@ -6,7 +6,7 @@
  * Time: 21:56 PM
  */
 
-class analyste extends controller implements controller_ie
+class analyst extends controller implements controller_ie
 {
     public function __construct()
     {
@@ -20,6 +20,13 @@ class analyste extends controller implements controller_ie
 
     public function index()
     {
+        if (session::check("type")) {
+            if (session::get("type") != "analyste") site::redirect(); else {
+                load::view("main::analyste");
+            }
 
+        } else {
+            site::redirect();
+        }
     }
 }
