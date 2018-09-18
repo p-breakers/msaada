@@ -70,7 +70,7 @@ class ClientDAO extends Model2
         try {
             $this->q = $this->db->prepare("SELECT * FROM clients");
             $this->q->execute();
-            $this->d = $this->q->fetch();
+            $this->d = $this->q->fetchAll();
         } catch (PDOException $e) {
             $this->d = $e->__toString();
         } finally {
@@ -115,6 +115,20 @@ class ClientDAO extends Model2
             $this->q = $this->db->prepare("SELECT count(*) FROM demande");
             $this->q->execute();
             $this->d = $this->q->fetch(PDO::FETCH_BOTH)[0];
+        } catch (PDOException $e) {
+            $this->d = $e->__toString();
+        } finally {
+            return $this->d;
+        }
+    }
+
+    public function addDemande($num_client, $libelle, $message)
+    {
+        try {
+            $this->q = $this->db->prepare("INSERT INTO demande(num_client, libelle, date_demande, message) 
+              VALUES(:num_client, :libelle, now(), :msg)");
+            $this->q->execute(["num_client" => $num_client, "libelle" => $libelle, "msg" => $message]);
+            $this->d = true;
         } catch (PDOException $e) {
             $this->d = $e->__toString();
         } finally {
