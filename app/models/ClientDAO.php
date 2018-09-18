@@ -200,4 +200,17 @@ class ClientDAO extends Model2
             return $this->d;
         }
     }
+
+    public function getAllDemande()
+    {
+        try {
+            $this->q = $this->db->prepare("SELECT * FROM demande");
+            $this->q->execute();
+            $this->d = $this->q->fetchAll();
+        } catch (PDOException $e) {
+            $this->d = $e->__toString();
+        } finally {
+            return $this->d;
+        }
+    }
 }
