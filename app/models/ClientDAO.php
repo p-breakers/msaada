@@ -136,12 +136,25 @@ class ClientDAO extends Model2
         }
     }
 
-    public function getClientAttrName()
+    public function getClientAttrName($table)
     {
         try {
-            $this->q = $this->db->prepare("DESCRIBE clients");
+            $this->q = $this->db->prepare("DESCRIBE $table");
             $this->q->execute();
             $this->d = $this->q->fetchAll(PDO::FETCH_COLUMN);
+        } catch (PDOException $e) {
+            $this->d = $e->__toString();
+        } finally {
+            return $this->d;
+        }
+    }
+
+    public function getAllCompte()
+    {
+        try {
+            $this->q = $this->db->prepare("SELECT * FROM compte");
+            $this->q->execute();
+            $this->d = $this->q->fetchAll();
         } catch (PDOException $e) {
             $this->d = $e->__toString();
         } finally {
