@@ -161,4 +161,17 @@ class ClientDAO extends Model2
             return $this->d;
         }
     }
+
+    public function nbCompte()
+    {
+        try {
+            $this->q = $this->db->prepare("SELECT count(*) FROM compte");
+            $this->q->execute();
+            $this->d = $this->q->fetch(PDO::FETCH_BOTH)[0];
+        } catch (PDOException $e) {
+            $this->d = $e->__toString();
+        } finally {
+            return $this->d;
+        }
+    }
 }
