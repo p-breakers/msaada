@@ -7,7 +7,7 @@
         $type = (session::get('type') == "banquier") ? "bankier" : "analyst";
         ?>
         <li class="second logo"><h1><a href="<?= site::site_url($type) ?>"><i class="fa fa-graduation-cap"
-                                                                              aria-hidden="true"></i><?= session::get('type') ?>
+                                                                              aria-hidden="true"></i><?= session::check('type') ? session::get('type') : $GLOBALS['config']['appName'] ?>
                 </a></h1></li>
         <?php if (session::check('id_admin')) load::view("template::navcontent"); ?>
         <li class="second full-screen">
@@ -15,7 +15,6 @@
                 <button id="toggle"><i class="fa fa-arrows-alt" aria-hidden="true"></i></button>
             </section>
         </li>
-
     </ul>
     <!-- //nav -->
 </div>
