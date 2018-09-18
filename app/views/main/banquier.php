@@ -24,11 +24,11 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="<?= site::site_url("bankier/list_clients") ?>">
                             <i class="fa fa-database" aria-hidden="true"></i>
                             <div class="ca-content">
-                                <h4 class="ca-main two">29,008</h4>
-                                <h3 class="ca-sub two">New Projects</h3>
+                                <h4 class="ca-main two"><?= $nbClient ?></h4>
+                                <h3 class="ca-sub two">Liste des clients</h3>
                             </div>
                         </a>
                     </li>
