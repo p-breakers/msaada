@@ -38,13 +38,13 @@ class ClientDAO extends Model2
      * @param $motdepasse
      * @return bool|string
      */
-    public function addClient($num_client, $nom_complet, $adresse, $nationalite, $genre, $phone, $email, $bday, $motdepasse){
+    public function addClient($nom_complet, $adresse, $nationalite, $genre, $phone, $email, $bday, $motdepasse)
+    {
         try{
             $this->q = $this->db->prepare("INSERT INTO 
-              clients(num_client, nom_complet, adresse, nationalite, genre, phone, email, bday, motdepasse) 
-              VALUES(:num_client, :nom_complet, :adresse, :nationalite, :genre, :phone, :email, :bday, :motdepasse)");
+              clients(nom_complet, adresse, nationalite, genre, phone, email, bday, motdepasse) 
+              VALUES(:nom_complet, :adresse, :nationalite, :genre, :phone, :email, :bday, :motdepasse)");
             $this->q->execute([
-                "num_client" => $num_client,
                 "nom_complet" => $nom_complet,
                 "adresse" => $adresse,
                 "nationalite" => $nationalite,
@@ -89,6 +89,19 @@ class ClientDAO extends Model2
             $this->q = $this->db->prepare("SELECT * FROM clients WHERE nom_complet LIKE %{$name}%");
             $this->q->execute();
             $this->d = $this->q->fetch();
+        } catch (PDOException $e) {
+            $this->d = $e->__toString();
+        } finally {
+            return $this->d;
+        }
+    }
+
+    public function nbClients()
+    {
+        try {
+            $this->q = $this->db->prepare("SELECT count(*) FROM clients");
+            $this->q->execute();
+            $this->d = $this->q->fetch(PDO::FETCH_BOTH)[0];
         } catch (PDOException $e) {
             $this->d = $e->__toString();
         } finally {
