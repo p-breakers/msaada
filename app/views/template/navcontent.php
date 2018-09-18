@@ -3,8 +3,7 @@
             <li class="dropdown profile_details_drop">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                     <div class="profile_img">
-                        <span class="prfil-img"><img src="<?= site::base_url("assets/images/admin.png") ?>"
-                                                     alt=""> </span>
+                        <span class="prfil-img"><img src="<?= site::base_url("assets/images/admin.png") ?>" alt="admin"></span>
                     </div>
                 </a>
                 <ul class="dropdown-menu drp-mnu">
