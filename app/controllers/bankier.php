@@ -23,10 +23,10 @@ class bankier extends controller implements controller_ie
         $clientDao = new ClientDAO();
         if (session::check("type")) {
             if (session::get("type") != "banquier") site::redirect(); else {
+                $data['nbDemande'] = $clientDao->nbDemande();
                 $data['nbClient'] = $clientDao->nbClients();
                 load::view("main::banquier", $data);
             }
-
         } else {
             site::redirect();
         }
@@ -42,6 +42,20 @@ class bankier extends controller implements controller_ie
             $q = $client->addClient($post->encoded['nom'], $post->encoded['adresse'], $post->encoded['nationalite'], $post->encoded['genre'], $post->encoded['phone'], $post->encoded['email'], $post->encoded['bday'], Admin::password_hash("123456"));
             if ($q === true) site::redirect(); else
                 site::redirect("bankier/add_client");
+        }
+    }
+
+    public function add_demande()
+    {
+        $clientDao = new ClientDAO();
+        if ($_SERVER['REQUEST_METHOD'] !== "POST") {
+            $data['clients'] = $clientDao->getAllClient();
+            load::view("banquier::add_demande", $data);
+        } else {
+            $post = new post();
+            $q = $clientDao->addDemande($post->encoded['id_client'], $post->encoded['libelle'], $post->encoded['message']);
+            if ($q === true) site::redirect(); else
+                site::redirect("bankier/add_demande");
         }
     }
 }
