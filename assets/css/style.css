@@ -1769,7 +1769,8 @@ input.form-control1.icon {
 .login-form {
     margin: 1em 0 2.5em;
 }
-.signin-form input[type="email"],.signin-form input[type="text"], .signin-form input[type="password"] {
+
+.signin-form input[type="email"], .signin-form input[type="text"], .signin-form input[type="password"], .signin-form input[type="tel"], .signin-form input[type="date"] {
    width: 100%;
        padding: 0.8em 0.8em;
     font-size: 1em;
@@ -1792,6 +1793,16 @@ input.form-control1.icon {
 }
 .signin-form input[type="password"] {
      background: none;
+    display: block;
+}
+
+.signin-form input[type="tel"] {
+    background: none;
+    display: block;
+}
+
+.signin-form input[type="date"] {
+    background: none;
     display: block;
 }
 ::-webkit-input-placeholder{
