@@ -42,11 +42,11 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="<?= site::site_url("bankier/list_credits") ?>">
                             <i class="fa fa-clone" aria-hidden="true"></i>
                             <div class="ca-content">
-                                <h4 class="ca-main four">30,808</h4>
-                                <h3 class="ca-sub four">New Orders</h3>
+                                <h4 class="ca-main four"><?= $nbCredit ?></h4>
+                                <h3 class="ca-sub four">Liste des cr&eacute;dits</h3>
                             </div>
                         </a>
                     </li>
