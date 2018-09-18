@@ -84,4 +84,12 @@ class bankier extends controller implements controller_ie
         $data['credits'] = $compte->getAllCredit();
         load::view("banquier::list_credits", $data);
     }
+
+    public function list_demandes()
+    {
+        $compte = new ClientDAO();
+        $data['tables'] = $compte->getClientAttrName("demande");
+        $data['demandes'] = $compte->getAllDemande();
+        load::view("banquier::list_demandes", $data);
+    }
 }
