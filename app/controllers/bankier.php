@@ -26,6 +26,7 @@ class bankier extends controller implements controller_ie
                 $data['nbDemande'] = $clientDao->nbDemande();
                 $data['nbClient'] = $clientDao->nbClients();
                 $data['nbCompte'] = $clientDao->nbCompte();
+                $data['nbCredit'] = $clientDao->nbCredit();
                 load::view("main::banquier", $data);
             }
         } else {
@@ -74,5 +75,13 @@ class bankier extends controller implements controller_ie
         $data['tables'] = $compte->getClientAttrName("compte");
         $data['comptes'] = $compte->getAllCompte();
         load::view("banquier::list_comptes", $data);
+    }
+
+    public function list_credits()
+    {
+        $compte = new ClientDAO();
+        $data['tables'] = $compte->getClientAttrName("credit");
+        $data['credits'] = $compte->getAllCredit();
+        load::view("banquier::list_credits", $data);
     }
 }
