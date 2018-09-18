@@ -15,11 +15,11 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="<?= site::site_url("bankier/add_demande") ?>">
                             <i class="fa fa-user" aria-hidden="true"></i>
                             <div class="ca-content">
-                                <h4 class="ca-main one">26,808</h4>
-                                <h3 class="ca-sub one">New Clients</h3>
+                                <h4 class="ca-main one"><?= $nbDemande ?></h4>
+                                <h3 class="ca-sub one">Ajouter une demande</h3>
                             </div>
                         </a>
                     </li>
