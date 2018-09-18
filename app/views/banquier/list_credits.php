@@ -4,7 +4,7 @@
     <!-- /pages_agile_info_w3l -->
 
     <div class="w3l-table-info agile_info_shadow" style="margin-top: 15px">
-        <h2 class="w3_inner_tittle">Liste des credits</h2>
+        <h2 class="w3_inner_tittle">Liste des comptes</h2>
         <table id="table-two-axis" class="two-axis">
             <thead>
             <tr>
@@ -17,9 +17,9 @@
             </thead>
             <tbody>
             <?php
-            foreach ($credits as $credit) {
+            foreach ($comptes as $compte) {
                 echo "<tr>";
-                foreach ($credit as $item) {
+                foreach ($compte as $item) {
                     $item = ucwords($item);
                     echo "<td>$item</td>";
                 }
