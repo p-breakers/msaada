@@ -58,4 +58,12 @@ class bankier extends controller implements controller_ie
                 site::redirect("bankier/add_demande");
         }
     }
+
+    public function list_clients()
+    {
+        $client = new ClientDAO();
+        $data['tables'] = $client->getClientAttrName();
+        $data['clients'] = $client->getAllClient();
+        load::view("banquier::list_clients", $data);
+    }
 }
