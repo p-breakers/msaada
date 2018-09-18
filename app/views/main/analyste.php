@@ -7,7 +7,6 @@
                 <ul class="ca-menu">
                     <li>
                         <a href="#">
-
                             <i class="fa fa-building-o" aria-hidden="true"></i>
                             <div class="ca-content">
                                 <h4 class="ca-main">16,808</h4>
