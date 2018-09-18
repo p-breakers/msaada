@@ -50,6 +50,15 @@
                             </div>
                         </a>
                     </li>
+                    <li>
+                        <a href="<?= site::site_url("bankier/list_demandes") ?>">
+                            <i class="fa fa-clone" aria-hidden="true"></i>
+                            <div class="ca-content">
+                                <h4 class="ca-main four"><?= $nbDemande ?></h4>
+                                <h3 class="ca-sub four">Liste des demandes</h3>
+                            </div>
+                        </a>
+                    </li>
                     <div class="clearfix"></div>
                 </ul>
             </div>
