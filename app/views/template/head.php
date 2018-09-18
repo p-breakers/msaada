@@ -23,7 +23,7 @@
     <!-- //font-awesome-icons -->
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet"/>
     <link rel="shortcut icon" href="<?= site::base_url("favicon.ico") ?>" type="image/x-icon"/>
-
+    <script type="text/javascript" src="<?= site::base_url("assets/js/jquery-2.1.4.min.js") ?>"></script>
 </head>
 <body>
 <div class="wthree_agile_admin_info">
