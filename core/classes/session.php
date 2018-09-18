@@ -13,9 +13,8 @@ class session
      */
     function __construct()
     {
-        if(!isset($_SESSION)){
+        if (session_status() === PHP_SESSION_NONE)
             session_start();
-        }
         foreach ($_COOKIE as $key => $value) {
             if(!isset($_SESSION[$key])){
                 json_decode($value);
