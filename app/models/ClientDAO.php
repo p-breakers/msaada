@@ -135,4 +135,17 @@ class ClientDAO extends Model2
             return $this->d;
         }
     }
+
+    public function getClientAttrName()
+    {
+        try {
+            $this->q = $this->db->prepare("DESCRIBE clients");
+            $this->q->execute();
+            $this->d = $this->q->fetchAll(PDO::FETCH_COLUMN);
+        } catch (PDOException $e) {
+            $this->d = $e->__toString();
+        } finally {
+            return $this->d;
+        }
+    }
 }
