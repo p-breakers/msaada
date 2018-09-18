@@ -5,9 +5,6 @@
 </footer>
 <!--copy rights end here-->
 <!-- js -->
-
-<script type="text/javascript" src="<?= site::base_url("assets/js/jquery-2.1.4.min.js") ?>"></script>
-
 <!-- /amcharts -->
 <script src="<?= site::base_url("assets/js/amcharts.js") ?>"></script>
 <script src="<?= site::base_url("assets/js/serial.js") ?>"></script>
