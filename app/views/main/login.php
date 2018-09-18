@@ -7,7 +7,7 @@
             <div class="signin-form profile admin">
                 <h2>Connexion Admin</h2>
                 <div class="login-form">
-                    <form action="<?= site::base_url("main/login_verify") ?>" method="post">
+                    <form action="<?= site::site_url("main/login_verify") ?>" method="post">
                         <input type="text" name="name" placeholder="Nom d'utilisateur" required="">
                         <input type="password" name="password" placeholder="Mot de passe" required="">
                         <div class="tp">
