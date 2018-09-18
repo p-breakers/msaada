@@ -25,6 +25,7 @@ class bankier extends controller implements controller_ie
             if (session::get("type") != "banquier") site::redirect(); else {
                 $data['nbDemande'] = $clientDao->nbDemande();
                 $data['nbClient'] = $clientDao->nbClients();
+                $data['nbCompte'] = $clientDao->nbCompte();
                 load::view("main::banquier", $data);
             }
         } else {
@@ -62,8 +63,16 @@ class bankier extends controller implements controller_ie
     public function list_clients()
     {
         $client = new ClientDAO();
-        $data['tables'] = $client->getClientAttrName();
+        $data['tables'] = $client->getClientAttrName("clients");
         $data['clients'] = $client->getAllClient();
         load::view("banquier::list_clients", $data);
+    }
+
+    public function list_comptes()
+    {
+        $compte = new ClientDAO();
+        $data['tables'] = $compte->getClientAttrName("compte");
+        $data['comptes'] = $compte->getAllCompte();
+        load::view("banquier::list_comptes", $data);
     }
 }
