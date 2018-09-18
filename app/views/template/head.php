@@ -17,6 +17,8 @@
     <link href="<?= site::base_url("assets/css/circles.css") ?>" rel="stylesheet" type="text/css" media="all" />
     <link href="<?= site::base_url("assets/css/style_grid.css") ?>" rel="stylesheet" type="text/css" media="all" />
     <link href="<?= site::base_url("assets/css/style.css") ?>" rel="stylesheet" type="text/css" media="all" />
+    <link href="<?= site::base_url("assets/css/basictable.css") ?>" rel="stylesheet" type="text/css" media="all"/>
+    <link href="<?= site::base_url("assets/css/table-style.css") ?>" rel="stylesheet" type="text/css" media="all"/>
 
     <!-- font-awesome-icons -->
     <link href="<?= site::base_url("assets/css/font-awesome.css") ?>" rel="stylesheet"/>
