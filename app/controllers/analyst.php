@@ -20,13 +20,25 @@ class analyst extends controller implements controller_ie
 
     public function index()
     {
+        $clientDao = new ClientDAO();
         if (session::check("type")) {
             if (session::get("type") != "analyste") site::redirect(); else {
-                load::view("main::analyste");
+                $data['nbDemande'] = $clientDao->nbDemande();
+                $data['nbClient'] = $clientDao->nbClients();
+                $data['nbCompte'] = $clientDao->nbCompte();
+                $data['nbCredit'] = $clientDao->nbCredit();
+                load::view("main::analyste", $data);
             }
-
         } else {
             site::redirect();
         }
+    }
+
+    public function list_demandes()
+    {
+        $compte = new ClientDAO();
+        $data['tables'] = $compte->getClientAttrName("demande");
+        $data['demandes'] = $compte->getAllDemande();
+        load::view("analyste::list_demandes", $data);
     }
 }
