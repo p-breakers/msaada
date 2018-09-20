@@ -49,8 +49,8 @@ class router
      */
     static function uri(int $part)
     {
-
         $parts = explode("/", $_SERVER["REQUEST_URI"]);
+        $parts[count($parts) - 1] = explode("?", $parts[count($parts) - 1])[0];
         $parts[count($parts) - 1] = str_replace($GLOBALS['config']['url_suffix'], "", end($parts));
         if($parts[1] == $GLOBALS["config"]["path"]["index"]){
             $part++;
