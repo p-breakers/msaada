@@ -213,4 +213,35 @@ class ClientDAO extends Model2
             return $this->d;
         }
     }
+
+    public function identif_risq($cap_perm, $val_imm, $cap_credit, $actif)
+    {
+        try {
+            $ratio_solv = $actif / $cap_credit;
+            $ratio_fin = $cap_perm / $val_imm;
+            $this->q = $this->db->prepare("UPDATE demande SET 
+          actif = :actif, ratio_financement = :ratio_fin, ratio_solvabilite = :ratio_solv, valeurs_immobilisees = :val_imm,
+          capitaux_permanent = :cap_perm, capitaux_credit = :cap_credit");
+            $this->q->execute(["actif" => $actif, "ratio_fin" => $ratio_fin, "ratio_solv" => $ratio_solv, "cap_credit" => $cap_credit, "cap_perm" => $cap_perm, "val_imm" => $val_imm]);
+            $this->d = true;
+        } catch (PDOException $e) {
+            $this->d = $e->__toString();
+        } finally {
+            return $this->d;
+        }
+    }
+
+    public function getDemande(int $id)
+    {
+        $id = htmlentities(addslashes($id));
+        try {
+            $this->q = $this->db->prepare("SELECT * FROM demande WHERE code_demande = :id");
+            $this->q->execute(["id" => $id]);
+            $this->d = $this->q->fetch();
+        } catch (PDOException $e) {
+            $this->d = $e->__toString();
+        } finally {
+            return $this->d;
+        }
+    }
 }
