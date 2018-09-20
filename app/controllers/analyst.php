@@ -41,4 +41,13 @@ class analyst extends controller implements controller_ie
         $data['demandes'] = $compte->getAllDemande();
         load::view("analyste::list_demandes", $data);
     }
+
+    public function demande_id()
+    {
+
+        $id = url::get("id");
+        $cl = new ClientDAO();
+        $data['cl'] = array_slice($cl->getDemande($id), 6);
+        load::view("analyste::demande_id", $data);
+    }
 }
