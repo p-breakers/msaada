@@ -63,13 +63,6 @@
                 </ul>
             </div>
             <!-- //agile_top_w3_grids-->
-            <div class="starter-template">
-                <h1>BANQUIER</h1>
-                <p class="lead">
-                    Use this document as a way to quickly start any new project.<br>
-                    All you get is this text and a mostly barebones HTML document.
-                </p>
-            </div>
         </div>
     </div>
 <?php load::view("template::foot") ?>
