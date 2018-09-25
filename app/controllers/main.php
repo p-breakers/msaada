@@ -71,6 +71,10 @@ class main extends controller implements controller_ie
 
     public function test()
     {
+        echo "<pre>";
+        var_dump($_SERVER);
+        echo "</pre>";
+        die;
         echo Admin::password_hash("123456");
     }
 
