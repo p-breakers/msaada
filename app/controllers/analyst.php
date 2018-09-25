@@ -42,12 +42,42 @@ class analyst extends controller implements controller_ie
         load::view("analyste::list_demandes", $data);
     }
 
+    public function list_comptes()
+    {
+        $compte = new ClientDAO();
+        $data['tables'] = $compte->getClientAttrName("compte");
+        $data['comptes'] = $compte->getAllCompte();
+        load::view("analyste::list_comptes", $data);
+    }
+
+    public function list_credits()
+    {
+        $compte = new ClientDAO();
+        $data['tables'] = $compte->getClientAttrName("credit");
+        $data['credits'] = $compte->getAllCredit();
+        load::view("banquier::list_credits", $data);
+    }
+
     public function demande_id()
     {
-
-        $id = url::get("id");
         $cl = new ClientDAO();
-        $data['cl'] = array_slice($cl->getDemande($id), 6);
-        load::view("analyste::demande_id", $data);
+        $id = url::get("id");
+        $dmd = $cl->getDemande($id);
+        if ($_SERVER['REQUEST_METHOD'] == "POST") {
+            $post = new post();
+            $d = $cl->identif_risq($dmd['num_client'], $post->encoded['cap_perm'], $post->encoded['val_imm'], $post->encoded['cap_cr'], $post->encoded['actif'], $post->encoded['facteur']);
+            if ($d) {
+                site::redirect("analyst");
+            } else
+                site::redirect();
+        } else {
+            $data['cl'] = $dmd;
+            if (!is_array($data['cl'])) {
+                site::redirect("analyst");
+                exit;
+            } else
+                load::view("analyste::demande_id", $data);
+        }
+
     }
 }
