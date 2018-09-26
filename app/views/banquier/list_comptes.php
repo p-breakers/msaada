@@ -13,6 +13,7 @@
                     echo "<th>$table</th>";
                 }
                 ?>
+                <th>Action</th>
             </tr>
             </thead>
             <tbody>
@@ -23,6 +24,7 @@
                     $item = ucwords($item);
                     echo "<td>$item</td>";
                 }
+                echo "<td><a href='" . site::site_url("banquier/add_compte") . "?id=" . $compte['id_compte'] . "' class='btn btn-default'><i class='fa fa-plus'></i> Cr&eacute;dit</a></td>";
                 echo "</tr>";
             }
             ?>
