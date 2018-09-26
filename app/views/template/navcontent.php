@@ -8,7 +8,7 @@
                 </a>
                 <ul class="dropdown-menu drp-mnu">
                     <li><a href="#"><i class="fa fa-cog"></i> Paramètres</a></li>
-                    <li><a href="#"><i class="fa fa-user"></i> Profil</a></li>
+                    <li><a href="#"><i class="fa fa-wpforms"></i> Profil</a></li>
                     <li><a href="<?= site::site_url("main/deconnexion") ?>"><i class="fa fa-sign-out"></i>
                             Déconnexion</a></li>
                 </ul>
@@ -122,7 +122,8 @@
     <li class="second top_bell_nav">
         <ul class="top_dp_agile ">
             <li class="dropdown head-dpdn">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-tasks"></i><span class="badge blue">9</span></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i
+                            class="fa fa-credit-card"></i><span class="badge blue">9</span></a>
                 <ul class="dropdown-menu">
                     <li>
                         <div class="notification_header">
@@ -177,7 +178,7 @@
 
     <li class="second w3l_search">
         <form action="#" method="post">
-            <input type="search" name="search" placeholder="Search here..." required="">
+            <input type="search" name="search" placeholder="Recherche..." required="">
             <button class="btn btn-default" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
         </form>
 
