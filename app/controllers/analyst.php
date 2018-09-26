@@ -65,7 +65,7 @@ class analyst extends controller implements controller_ie
         $dmd = $cl->getDemande($id);
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $post = new post();
-            $d = $cl->identif_risq($dmd['num_client'], $post->encoded['cap_perm'], $post->encoded['val_imm'], $post->encoded['cap_cr'], $post->encoded['actif'], $post->encoded['facteur']);
+            $d = $cl->identif_risq($post->encoded['id_dmd'], $post->encoded['cap_perm'], $post->encoded['val_imm'], $post->encoded['cap_cr'], $post->encoded['actif'], $post->encoded['facteur'], $post->encoded['id_client']);
             if ($d) {
                 site::redirect("analyst");
             } else
