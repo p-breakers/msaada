@@ -9,7 +9,7 @@
                     <div class="signin-form profile">
                         <h2>Modifier demande</h2>
                         <div class="login-form form-body form-body-info">
-                            <form action="<?= site::site_url("bankier/add_client") ?>" method="post"
+                            <form action="<?= site::site_url("bankier/demande_id") ?>" method="post"
                                   accept-charset="UTF-8">
                                 <input type="hidden" name="id" value="<?= cl['id'] ?>"/>
                                 <label for="cap_perm" class="control-label">Capitaux Permanent</label>
