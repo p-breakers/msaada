@@ -14,8 +14,7 @@ class main extends controller implements controller_ie
      */
     function index()
     {
-        if (session::check('id_admin'))
-            load::view("main::index");
+        if (session::check('id_admin')) site::redirect((session::get('type') == "banquier") ? "bankier" : "analyst");
         else
             site::redirect("main/login");
     }
