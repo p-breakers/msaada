@@ -214,17 +214,17 @@ class ClientDAO extends Model2
         }
     }
 
-    public function identif_risq($id, $cap_perm, $val_imm, $cap_credit, $actif, $facteur)
+    public function identif_risq($id, $cap_perm, $val_imm, $cap_credit, $actif, $facteur, $id_client)
     {
         try {
             $ratio_solv = $actif / $cap_credit;
             $ratio_fin = $cap_perm / $val_imm;
             $this->q = $this->db->prepare("UPDATE demande SET 
           actif = :actif, ratio_financement = :ratio_fin, ratio_solvabilite = :ratio_solv, valeurs_immobilisees = :val_imm,
-          capitaux_permanent = :cap_perm, capitaux_credit = :cap_credit, facteur = :facteur WHERE id = :id");
+          capitaux_permanent = :cap_perm, capitaux_credit = :cap_credit, facteur = :facteur WHERE code_demande = :id");
             $this->q->execute(["actif" => $actif, "ratio_fin" => $ratio_fin, "ratio_solv" => $ratio_solv, "cap_credit" => $cap_credit, "cap_perm" => $cap_perm, "val_imm" => $val_imm, "facteur" => $facteur, "id" => $id]);
             $this->d = false;
-            if ($ratio_fin >= 0.8) $this->d = $this->addCompte($id);
+            if ($ratio_fin >= 0.8) $this->d = $this->addCompte($id_client);
         } catch (PDOException $e) {
             $this->d = $e->__toString();
         } finally {
@@ -246,11 +246,10 @@ class ClientDAO extends Model2
         }
     }
 
-    public function addCompte($client)
+    private function addCompte($client)
     {
         try {
             $compte = helper::randomString();
-            $client = helper::htmlencode($client);
             $this->q = $this->db->prepare("INSERT INTO compte(num_compte,num_client) VALUES (:compte, :client)");
             $this->q->execute(["compte" => $compte, "client" => $client]);
             $this->d = true;
