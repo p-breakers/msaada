@@ -13,6 +13,7 @@
                     echo "<th>$table</th>";
                 }
                 ?>
+                <th>Action</th>
             </tr>
             </thead>
             <tbody>
@@ -23,6 +24,7 @@
                     $item = ucwords($item);
                     echo "<td>$item</td>";
                 }
+                echo "<td></td>";
                 echo "</tr>";
             }
             ?>
