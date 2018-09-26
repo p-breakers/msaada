@@ -9,9 +9,10 @@
                     <div class="signin-form profile">
                         <h2>Modifier demande</h2>
                         <div class="login-form form-body form-body-info">
-                            <form action="<?= site::site_url("bankier/demande_id") ?>" method="post"
+                            <form action="<?= site::site_url("analyst/demande_id") ?>" method="post"
                                   accept-charset="UTF-8">
-                                <input type="hidden" name="id" value="<?= cl['id'] ?>"/>
+                                <input type="hidden" name="id_dmd" value="<?= $cl['code_demande'] ?>"/>
+                                <input type="hidden" name="id_client" value="<?= $cl['num_client'] ?>"/>
                                 <label for="cap_perm" class="control-label">Capitaux Permanent</label>
                                 <input type="number" value="<?= $cl['capitaux_permanent'] ?>" class="form-control"
                                        id="cap_perm" name="cap_perm" required/>
@@ -19,7 +20,7 @@
                                 <input type="number" value="<?= $cl['valeurs_immobilisees'] ?>" class="form-control"
                                        id="val_imm" name="val_imm" required/>
                                 <label for="actif" class="control-label">Actif</label>
-                                <input type="number" value="<?= $cl['acticf'] ?>" class="form-control" id="actif"
+                                <input type="number" value="<?= $cl['actif'] ?>" class="form-control" id="actif"
                                        name="actif" required/>
                                 <label for="cap_cr" class="control-label">Capitaux Credit</label>
                                 <input type="number" value="<?= $cl['capitaux_credit'] ?>" class="form-control"
