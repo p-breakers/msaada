@@ -1,3 +1,3 @@
-# Une petite application de simulation de transaction bancaire
----------------------------------------------------------------
-**Une application d'octroi de credit bancaire**
+# MSAADA
+------------
+## Votre aide en terme d'application web robuste et rapide
